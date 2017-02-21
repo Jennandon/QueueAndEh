@@ -7,6 +7,9 @@
  # Java class files
 *.class
 
+# DS STORE
+.DS_Store
+
 # Generated files
 bin/
 gen/
