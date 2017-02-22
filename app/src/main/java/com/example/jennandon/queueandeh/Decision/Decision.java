@@ -58,8 +58,7 @@ public class Decision {
         this.parentId = parentId;
     }
 
-    public Map<Integer, String> getSubDecisions() {
-        return subDecisions;
+    public Map<Integer, String> getSubDecisions() {return subDecisions;
     }
 
     public void setSubDecisions(Map<Integer, String> subDecisions) {

@@ -9,6 +9,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -67,14 +68,22 @@ public class DummyContent {
 
     private static void loadData() {
 
-       // InputStream raw = new FileInputStream(new File(xml_file_path));
+        try {
+            InputStream raw = new FileInputStream(new File("/Users/Shannon/Dropbox/School/PersProjs/IDC/QueueAndEh/app/src/main/res/raw/example1.xml"));
+            try{
+                parseDecisionsXML(raw);
+            }catch(Exception e) {
+                System.out.println("delete me later DEAR GOD DELETE ME LATER");
+            }
 
-        // parseDecisionsXML(jennsxmlfile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private static final String ns = null;
 
-    public List parseDecisionsXML(InputStream in) throws XmlPullParserException, IOException {
+    public static List parseDecisionsXML(InputStream in) throws XmlPullParserException, IOException {
         try {
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
@@ -86,7 +95,7 @@ public class DummyContent {
         }
     }
 
-    private List readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private static List readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
         List decisions = new ArrayList();
 
         parser.require(XmlPullParser.START_TAG, ns, "decisions");
@@ -98,6 +107,7 @@ public class DummyContent {
             // Starts by looking for the decision tag
             if (name.equals("decision")) {
                 decisions.add(readDecision(parser));
+
             } else {
                 skip(parser);
             }
@@ -107,7 +117,7 @@ public class DummyContent {
 
     // Parses the contents of a decision. If it encounters a title, summary, or link tag, hands them off
 // to their respective "read" methods for processing. Otherwise, skips the tag.
-    private Decision readDecision(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private static Decision readDecision(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "decision");
 
         Decision decision = new Decision();
@@ -120,27 +130,35 @@ public class DummyContent {
 
             String stringID = parser.getAttributeValue(null, "id");
             decision.setId(Integer.parseInt(stringID));
+            System.out.println(decision.getId());
             parser.nextTag();
+
 
             String stringRoot = parser.getAttributeValue(null, "root");
             decision.setRootId(Integer.parseInt(stringRoot));
+            System.out.println(decision.getRootId());
             parser.nextTag();
 
             String stringParent = parser.getAttributeValue(null, "parent");
             decision.setParentId(Integer.parseInt(stringParent));
+            System.out.println(decision.getParentId());
             parser.nextTag();
 
             if (name.equals("text")) {
                 decision.setText(readText(parser));
+                System.out.println(decision.getText());
 
             } else if (name.equals("picture")) {
                 decision.setImagePath(readPicture(parser));
+                System.out.println(decision.getImagePath());
+
             } else if (name.equals("sound")) {
                 decision.setSoundPath(readSound(parser));
+                System.out.println(decision.getSoundPath());
 
             } else if (name.equals("resources")) {
                 // deal with resources
-                //
+                // sout decision.getResources()
 
             } else if (name.equals("subdecision")) {
                 String stringSubID = parser.getAttributeValue(null, "id");
@@ -150,6 +168,8 @@ public class DummyContent {
                 String subDecisionText = readSubdecisionText(parser);
 
                 decision.getSubDecisions().put(subDecisionID, subDecisionText);
+
+                System.out.println(decision.getSubDecisions());
 
             } else {
                 skip(parser);
@@ -178,7 +198,7 @@ public class DummyContent {
     }
 
     // Processes text tags in the feed.
-    private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
+    private static String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, ns, "text");
         String text = readTextField(parser);
         parser.require(XmlPullParser.END_TAG, ns, "text");
@@ -186,7 +206,7 @@ public class DummyContent {
     }
 
     // Processes picture tags in the feed.
-    private String readPicture(XmlPullParser parser) throws IOException, XmlPullParserException {
+    private static String readPicture(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, ns, "picture");
         String picture = readTextField(parser);
         parser.require(XmlPullParser.END_TAG, ns, "picture");
@@ -194,7 +214,7 @@ public class DummyContent {
     }
 
     // Processes sound tags in the feed.
-    private String readSound(XmlPullParser parser) throws IOException, XmlPullParserException {
+    private static String readSound(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, ns, "sound");
         String sound = readTextField(parser);
         parser.require(XmlPullParser.END_TAG, ns, "sound");
@@ -202,7 +222,7 @@ public class DummyContent {
     }
 
     // Processes text tags in the feed.
-    private String readSubdecisionText(XmlPullParser parser) throws IOException, XmlPullParserException {
+    private static String readSubdecisionText(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, ns, "subdecision");
         String subDecisionText = readTextField(parser);
         parser.require(XmlPullParser.END_TAG, ns, "subdecision");
@@ -229,7 +249,7 @@ public class DummyContent {
 //    }
 
     // For the tags title and summary, extracts their text values.
-    private String readTextField(XmlPullParser parser) throws IOException, XmlPullParserException {
+    private static String readTextField(XmlPullParser parser) throws IOException, XmlPullParserException {
         String result = "";
         if (parser.next() == XmlPullParser.TEXT) {
             result = parser.getText();
@@ -238,7 +258,7 @@ public class DummyContent {
         return result;
     }
 
-    private void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private static void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
         if (parser.getEventType() != XmlPullParser.START_TAG) {
             throw new IllegalStateException();
         }

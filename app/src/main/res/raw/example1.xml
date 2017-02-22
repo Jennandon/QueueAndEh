@@ -8,8 +8,8 @@
     <sound>””</sound>
     <resources></resources>
     <subdecisions>
-        <decision id="2">”yes”</decision>
-        <decision id="3">“no”</decision>
+        <subdecision id="2">”yes”</subdecision>
+        <subdecision id="3">“no”</subdecision>
     </subdecisions>
 </decision>
 
@@ -19,8 +19,8 @@
     <sound>””</sound>
     <resources> </resources>
     <subdecisions>
-        <decision id="4"> “yes”</decision>
-        <decision id="5"> “no”</decision>
+        <subdecision id="4"> “yes”</subdecision>
+        <subdecision id="5"> “no”</subdecision>
     </subdecisions>
 
 </decision>
@@ -41,8 +41,8 @@
     <sound>””</sound>
     <resources></resources>
     <subdecisions>
-        <decision id="8">”yes”</decision>
-        <decision id="9"> “no”</decision>
+        <subdecision id="8">”yes”</subdecision>
+        <subdecision id="9"> “no”</subdecision>
     </subdecisions>
 
 </decision>
@@ -53,8 +53,8 @@
     <sound>””</sound>
     <resources></resources>
     <subdecisions>
-        <decision id="6">”yes”</decision>
-        <decision id="7">“no”</decision>
+        <subdecision id="6">”yes”</subdecision>
+        <subdecision id="7">“no”</subdecision>
     </subdecisions>
 
 </decision>
@@ -93,7 +93,6 @@
     <sound>””</sound>
     <resources></resources>
     <subdecisions></subdecisions>
-
 </decision>
 
     </decisions>
