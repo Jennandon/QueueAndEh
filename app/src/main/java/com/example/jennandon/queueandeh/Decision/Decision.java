@@ -6,7 +6,9 @@ package com.example.jennandon.queueandeh.Decision;
 
 import android.media.MediaPlayer;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A class to model the decisions parsed from the XML
@@ -16,7 +18,7 @@ public class Decision {
     private Integer id;
     private Integer rootId;
     private Integer parentId;
-    private List<Decision> subDecisions;
+    private Map<Integer, String> subDecisions;
     private String soundPath;
     private String imagePath;
     private List<String> resources;
@@ -26,7 +28,7 @@ public class Decision {
         this.id = null;
         this.rootId = null;
         this.parentId = null;
-        this.subDecisions = null;
+        this.subDecisions = new HashMap<>();
         this.soundPath = null;
         this.imagePath = null;
         this.resources = null;
@@ -56,11 +58,11 @@ public class Decision {
         this.parentId = parentId;
     }
 
-    public List<Decision> getSubDecisions() {
+    public Map<Integer, String> getSubDecisions() {
         return subDecisions;
     }
 
-    public void setSubDecisions(List<Decision> subDecisions) {
+    public void setSubDecisions(Map<Integer, String> subDecisions) {
         this.subDecisions = subDecisions;
     }
 
