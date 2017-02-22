@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_material_dark">
+
+    <Button
+        android:text="NOPE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NO"
+        android:layout_alignBaseline="@+id/YES"
+        android:layout_alignBottom="@+id/YES"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="monospace" />
+
+    <Button
+        android:text="YEAH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/YES"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginBottom="19dp"
+        android:layout_above="@+id/button5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="monospace" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@color/dim_foreground_disabled_material_dark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imageView" />
+
+    <Button
+        android:text="go back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/back"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/YES"
+        android:layout_alignStart="@+id/YES"
+        android:fontFamily="monospace" />
+
+    <Button
+        android:text="start again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/NO"
+        android:layout_alignEnd="@+id/NO"
+        android:layout_marginRight="31dp"
+        android:layout_marginEnd="31dp"
+        android:fontFamily="monospace" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="ARE YOU FEELING INDECISIVE?"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_marginBottom="58dp"
+        android:layout_above="@+id/NO"
+        android:layout_alignLeft="@+id/YES"
+        android:layout_alignStart="@+id/YES"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignRight="@+id/NO"
+        android:layout_alignEnd="@+id/NO"
+        android:fontFamily="monospace" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/Screen Shot 2017-02-18 at 9"
+        android:layout_below="@+id/imageView"
+        android:layout_toEndOf="@+id/YES"
+        android:layout_marginTop="115dp"
+        android:id="@+id/imageView3"
+        android:layout_toRightOf="@+id/YES" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/star_big_on"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3"
+        android:id="@+id/imageView4"
+        android:layout_toLeftOf="@+id/NO"
+        android:layout_toStartOf="@+id/NO"
+        android:scaleType="center"
+        android:adjustViewBounds="true" />
+</RelativeLayout>
