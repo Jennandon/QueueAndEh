@@ -32,36 +32,9 @@
         android:fontFamily="monospace"
         style="@android:style/Widget.DeviceDefault.Light.Button" />
 
-    <Button
-        android:text="go back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/back"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/YES"
-        android:layout_alignStart="@+id/YES"
-        android:fontFamily="monospace" />
-
-    <Button
-        android:text="start again"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/NO"
-        android:layout_alignEnd="@+id/NO"
-        android:layout_marginRight="31dp"
-        android:layout_marginEnd="31dp"
-        android:fontFamily="monospace" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/Screen Shot 2017-02-18 at 9"
         android:layout_below="@+id/imageView"
         android:layout_toEndOf="@+id/YES"
         android:layout_marginTop="115dp"
@@ -96,4 +69,30 @@
         android:layout_marginTop="49dp"
         android:layout_alignRight="@+id/NO"
         android:layout_alignEnd="@+id/NO" />
+
+    <Button
+        android:text="start again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="monospace"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/NO"
+        android:layout_alignEnd="@+id/NO" />
+
+    <Button
+        android:text="go back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/back"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:fontFamily="monospace"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/button5"
+        android:layout_toStartOf="@+id/button5"
+        android:layout_marginRight="36dp"
+        android:layout_marginEnd="36dp" />
 </RelativeLayout>

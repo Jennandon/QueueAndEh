@@ -8,39 +8,11 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/Screen Shot 2017-02-18 at 9"
         android:layout_below="@+id/imageView"
         android:layout_toEndOf="@+id/YES"
         android:layout_marginTop="115dp"
         android:id="@+id/imageView3"
         android:layout_toRightOf="@+id/YES" />
-
-    <Button
-        android:text="go back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/back"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"
-        android:layout_marginLeft="21dp"
-        android:layout_marginStart="21dp"
-        android:fontFamily="monospace"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2" />
-
-    <Button
-        android:text="start again"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"
-        android:fontFamily="monospace"
-        android:layout_alignBaseline="@+id/back"
-        android:layout_alignBottom="@+id/back"
-        android:layout_toRightOf="@+id/back"
-        android:layout_toEndOf="@+id/back"
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -66,4 +38,26 @@
         android:layout_below="@+id/imageView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp" />
+
+    <Button
+        android:text="go back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/back"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:fontFamily="monospace"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/imageView4"
+        android:layout_toStartOf="@+id/imageView4" />
+
+    <Button
+        android:text="start again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:fontFamily="monospace"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/imageView4"
+        android:layout_toEndOf="@+id/imageView4" />
 </RelativeLayout>
