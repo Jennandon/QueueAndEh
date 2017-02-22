@@ -1,6 +1,7 @@
 package com.example.jennandon.queueandeh.Utils;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.util.Xml;
 
 import com.example.jennandon.queueandeh.Decision.Decision;
@@ -23,12 +24,12 @@ import java.util.Map;
  * Created by Shannon on 2017-02-21.
  */
 
-public class Parser extends Activity {
+public class Parser{
 
-        private void loadData() {
+        public void loadData(Resources resources) {
 
             try {
-                parseDecisionsXML(this.getResources().openRawResource(R.raw.example1));
+                parseDecisionsXML(resources.openRawResource(R.raw.example1));
 
             } catch(Exception e) {
                     System.out.println("delete me later DEAR GOD DELETE ME LATER");
@@ -76,27 +77,18 @@ public class Parser extends Activity {
 
             Decision decision = new Decision();
 
+            String stringID = parser.getAttributeValue(null, "id");
+            decision.setId(Integer.parseInt(stringID));
+            String stringRoot = parser.getAttributeValue(null, "root");
+            decision.setRootId(Integer.parseInt(stringRoot));
+            String stringParent = parser.getAttributeValue(null, "parent");
+            decision.setParentId(Integer.parseInt(stringParent));
+
             while (parser.next() != XmlPullParser.END_TAG) {
                 if (parser.getEventType() != XmlPullParser.START_TAG) {
                     continue;
                 }
                 String name = parser.getName();
-
-                String stringID = parser.getAttributeValue(null, "id");
-                decision.setId(Integer.parseInt(stringID));
-                System.out.println(decision.getId());
-                parser.nextTag();
-
-
-                String stringRoot = parser.getAttributeValue(null, "root");
-                decision.setRootId(Integer.parseInt(stringRoot));
-                System.out.println(decision.getRootId());
-                parser.nextTag();
-
-                String stringParent = parser.getAttributeValue(null, "parent");
-                decision.setParentId(Integer.parseInt(stringParent));
-                System.out.println(decision.getParentId());
-                parser.nextTag();
 
                 if (name.equals("text")) {
                     decision.setText(readText(parser));
@@ -117,7 +109,6 @@ public class Parser extends Activity {
                 } else if (name.equals("subdecision")) {
                     String stringSubID = parser.getAttributeValue(null, "id");
                     Integer subDecisionID = Integer.parseInt(stringSubID);
-                    parser.nextTag();
 
                     String subDecisionText = readSubdecisionText(parser);
 
@@ -125,13 +116,17 @@ public class Parser extends Activity {
 
                     System.out.println(decision.getSubDecisions());
 
-                } else {
+                } else if (name.equals("subdecisions")) {
+                    readSubDecisions(parser, decision);
+                }else{
                     skip(parser);
                 }
             }
             return decision;
         }
+        private void readSubDecisions(XmlPullParser parser, Decision decision){
 
+        }
         //// DOES NOTHING HERE ---- JUST FROM EXAMPLE
         // Processes link tags in the feed. / //// going to be decision tag
         private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {
