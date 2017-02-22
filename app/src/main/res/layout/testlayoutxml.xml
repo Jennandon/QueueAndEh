@@ -72,7 +72,7 @@
         android:layout_alignEnd="@+id/NO"
         android:textStyle="normal|bold" />
 
-    <ImageView
+    <!-- <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/city1"
@@ -84,7 +84,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/indecicitytitle"
+         app:srcCompat="@drawable/indecicitytitle"
         android:id="@+id/imageView9"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -112,6 +112,6 @@
         android:fontFamily="monospace"
         android:textColor="@color/abc_input_method_navigation_guard"
         android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true" /> -->
 
 </RelativeLayout>
