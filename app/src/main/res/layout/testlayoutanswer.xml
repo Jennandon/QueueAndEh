@@ -8,29 +8,6 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_toEndOf="@+id/YES"
-        android:layout_marginTop="115dp"
-        android:id="@+id/imageView3"
-        android:layout_toRightOf="@+id/YES" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:text="THEN FIGURE IT OUT YOUR DAMN SELF!"
-        android:textSize="24sp"
-        android:fontFamily="monospace"
-        android:layout_above="@+id/back"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="110dp"
-        android:textAlignment="center" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/imageView4"
         android:scaleType="center"
         android:adjustViewBounds="true"
@@ -59,4 +36,28 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/imageView4"
         android:layout_toEndOf="@+id/imageView4" />
+
+    <TextView
+        android:text="THEN FIGURE IT OUT YOUR DAMN SELF!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textSize="24sp"
+        android:textColor="@color/abc_input_method_navigation_guard"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="100dp"
+        android:layout_above="@+id/back"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/link2"
+        android:id="@+id/imageView6"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
