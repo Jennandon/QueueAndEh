@@ -26,13 +26,25 @@ import java.util.Map;
 
 public class Parser{
 
-        public Map<Integer, Decision> loadData(Resources resources) throws XmlPullParserException, IOException{
-            return parseDecisionsXML(resources.openRawResource(R.raw.example1));
+        public Map<Integer, Decision> loadData(Resources resources){
+            try{
+                return parseDecisionsXML(resources.openRawResource(R.raw.example1));
+            }
+            catch(XmlPullParserException e){
+                //TODO: Add logging here
+                e.printStackTrace();
+                return null;
+            }
+            catch(IOException e){
+                //TODO: Add logging here
+                e.printStackTrace();
+                return null;
+            }
         }
 
         private final String ns = null;
 
-        public Map<Integer, Decision> parseDecisionsXML(InputStream in) throws XmlPullParserException, IOException {
+        private Map<Integer, Decision> parseDecisionsXML(InputStream in) throws XmlPullParserException, IOException {
             try {
                 XmlPullParser parser = Xml.newPullParser();
                 parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
@@ -97,8 +109,7 @@ public class Parser{
                     System.out.println(decision.getSoundPath());
 
                 } else if (name.equals("resources")) {
-                    parser.next();
-
+                    readTextField(parser, "resources");
                 }else if (name.equals("subdecisions")) {
                     readSubDecisions(parser, decision);
                 }else{
@@ -122,6 +133,9 @@ public class Parser{
                     String textValue = readTextField(parser, "subdecision");
                     decision.getSubDecisions().put(Integer.parseInt(subdecisionID), textValue);
                 }
+                else{
+                    parser.next();
+                }
             }
         }
         //// DOES NOTHING HERE ---- JUST FROM EXAMPLE
@@ -143,31 +157,12 @@ public class Parser{
             return link;
         }
 
-        private String readTextField(XmlPullParser parser, String tag) throws IOException, XmlPullParserException{
+        private String readTextField(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
             parser.require(XmlPullParser.START_TAG, ns, tag);
             String subDecisionText = readTextField(parser);
             parser.require(XmlPullParser.END_TAG, ns, tag);
             return subDecisionText;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-//    // Processes resources tags in the feed.
-//    private List<Resource> readResources(XmlPullParser parser) throws IOException, XmlPullParserException {
-//        parser.require(XmlPullParser.START_TAG, ns, "sound");
-//         sound = readTextField(parser);
-//        parser.require(XmlPullParser.END_TAG, ns, "sound");
-//        return sound;
-//    }
 
         // For the tags title and summary, extracts their text values.
         private String readTextField(XmlPullParser parser) throws IOException, XmlPullParserException {

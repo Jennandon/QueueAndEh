@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 
+import com.example.jennandon.queueandeh.Utils.GameData;
 import com.example.jennandon.queueandeh.Utils.Parser;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -20,15 +21,8 @@ public class StartActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testlayoutxml);
-        Parser parser = new Parser();
-        try {
-            parser.loadData(this.getResources());
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        this.getResources();
-
+        GameData.loadInstance(this.getResources());
+        GameData gameData = GameData.getInstance();
+        System.out.println("hey");
     }
 }
