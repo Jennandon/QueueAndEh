@@ -1,5 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/item_detail_container"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context=".ItemDetailActivity" tools:ignore="MergeRootFrame" >
+
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/item_detail"
     style="?android:attr/textAppearanceLarge" android:layout_width="match_parent"
     android:layout_height="match_parent" android:padding="16dp" android:textIsSelectable="true"
-    tools:context=".ItemDetailFragment" />
+    tools:context=".ItemDetailFragment"
+    />
+
+<fragment
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/fragment_fragment_button" />
+<fragment
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/fragment_fragment_decision_img"
+tools:context=".Utils."/>
+<fragment
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/fragment_fragment_hyperlink" />
+
+
+</FrameLayout>
