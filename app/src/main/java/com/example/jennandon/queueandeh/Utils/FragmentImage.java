@@ -75,9 +75,8 @@ public class FragmentImage extends Fragment {
         }
     }
 
-    @Override
     public void onAttach(Context context) {
-        super.onAttach(context);
+       // super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
