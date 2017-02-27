@@ -1,23 +1,19 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.jennandon.queueandeh.Utils.FragmentButton">
+<Button android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="54dp"
+    android:layout_marginStart="54dp"
+    android:layout_marginBottom="99dp"
+    android:id="@+id/button"
+    style="@android:style/Widget.DeviceDefault.Light.Button"
+    android:fontFamily="monospace"
+    android:backgroundTint="@color/dim_foreground_disabled_material_dark"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:text="in button"
 
-    <!-- TODO: Update blank fragment layout -->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="54dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginBottom="99dp"
-        android:id="@+id/button"
-        style="@android:style/Widget.DeviceDefault.Light.Button"
-        android:fontFamily="monospace"
-        android:backgroundTint="@color/dim_foreground_disabled_material_dark"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="in button" />
-</RelativeLayout>
+    tools:context="com.example.jennandon.queueandeh.Utils.FragmentButton"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" />
+
