@@ -13,12 +13,14 @@ public class DecisionActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.testlayoutxml);
+        setContentView(R.layout.testlayout3node);
         this.getResources().openRawResource(R.raw.example1);
+
     }
 
     /** Called when the user clicks the Send button */
     public void sendMessage(View view) {
+
         // Do something in response to button
     }
 }

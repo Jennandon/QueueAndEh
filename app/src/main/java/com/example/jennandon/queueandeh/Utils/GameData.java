@@ -13,7 +13,7 @@ import java.util.Map;
  * GameData singleton to contain static information of interest to our activities
  * Created by Shannon on 2017-02-22.
  */
-public class GameData extends Activity {
+public class GameData {
 
     private static GameData ourInstance;
     private Map<Integer, Decision> decisionMap;

@@ -14,11 +14,13 @@
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:id="@+id/fragment_fragment_button" />
+
 <fragment
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:id="@+id/fragment_fragment_decision_img"
 tools:context=".Utils."/>
+
 <fragment
 android:layout_width="match_parent"
 android:layout_height="match_parent"
