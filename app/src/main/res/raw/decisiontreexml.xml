@@ -12,6 +12,7 @@
             <subdecision id="3">“no”</subdecision>
         </subdecisions>
     </decision>
+    <!-- can get rid of this first decision later !-->
 
     <decision id="2" root="1" parent="1">
         <text>”DO YOU HAVE THE WHOLE DAY?”</text>

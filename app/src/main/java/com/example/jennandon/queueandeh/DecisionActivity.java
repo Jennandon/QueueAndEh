@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.jennandon.queueandeh.Decision.Decision;
+import com.example.jennandon.queueandeh.Utils.DecisionTree;
 
 /**
  * Created by andrewbates11 on 2017-02-21.
@@ -21,6 +25,15 @@ public class DecisionActivity extends Activity {
 
         // TODO: refactor this
         setStartOverBtn();
+        setDecisionText();
+    }
+
+
+    protected void setDecisionText() {
+        TextView decisionTextView = (TextView) findViewById(R.id.decisionText);
+        Decision decisionOne = DecisionTree.getInstance().getFirstDecision();
+
+        decisionTextView.setText(decisionOne.getText());
     }
 
 

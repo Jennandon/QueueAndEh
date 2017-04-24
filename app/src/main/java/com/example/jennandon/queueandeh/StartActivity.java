@@ -2,18 +2,11 @@ package com.example.jennandon.queueandeh;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.jennandon.queueandeh.Utils.GameData;
-import com.example.jennandon.queueandeh.Utils.Parser;
-
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
+import com.example.jennandon.queueandeh.Utils.DecisionTree;
 
 /**
  * Created by andrewbates11 on 2017-02-21.
@@ -25,8 +18,8 @@ public class StartActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testlayoutxml);
-        GameData.loadInstance(this.getResources());
-        GameData gameData = GameData.getInstance();
+        DecisionTree.loadInstance(this.getResources());
+        DecisionTree decisionTree = DecisionTree.getInstance();
 
         setYesButton();
         setNoButton();
