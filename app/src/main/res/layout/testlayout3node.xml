@@ -80,4 +80,14 @@
         android:fontFamily="monospace"
         android:layout_above="@+id/NO"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/sampleimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/link2"
+        android:layout_above="@+id/decisionText"
+        android:layout_alignRight="@+id/NO"
+        android:layout_alignEnd="@+id/NO"
+        android:layout_marginBottom="26dp" />
 </RelativeLayout>

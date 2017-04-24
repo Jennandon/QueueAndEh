@@ -2,20 +2,26 @@ package com.example.jennandon.queueandeh;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jennandon.queueandeh.Decision.Decision;
 import com.example.jennandon.queueandeh.Utils.DecisionTree;
+
+import java.util.HashMap;
 
 /**
  * Created by andrewbates11 on 2017-02-21.
  */
 
 public class DecisionActivity extends Activity {
+    private Decision currentDecision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +31,21 @@ public class DecisionActivity extends Activity {
 
         // TODO: refactor this
         setStartOverBtn();
-        setDecisionText();
+        setDecisionFields();
     }
 
+    //sets decision fields for the current decision
+    protected void setDecisionFields() {
+        currentDecision = DecisionTree.getInstance().getFirstDecision();
 
-    protected void setDecisionText() {
         TextView decisionTextView = (TextView) findViewById(R.id.decisionText);
-        Decision decisionOne = DecisionTree.getInstance().getFirstDecision();
+        decisionTextView.setText(currentDecision.getText());
 
-        decisionTextView.setText(decisionOne.getText());
+
+        ImageView decisionImageView = (ImageView) findViewById(R.id.sampleimage);
+        Bitmap decisionBitmap = BitmapFactory.decodeFile(currentDecision.getImagePath());
+        decisionImageView.setImageBitmap(decisionBitmap);
+
     }
 
 
@@ -45,13 +57,41 @@ public class DecisionActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //yesBtn.setBackgroundColor(Color.RED);
                         Intent i = new Intent(DecisionActivity.this, StartActivity.class);
-                        //i.putExtra(getString(R.string.stop_name_key), stop.getNumber());
                         startActivity(i);
                     }
                 }
         );
+    }
+
+    // when yes button is pressed, go to the corresponding decisionactivity or decision leaf
+    protected void chooseYesButton() {
+        final Button chsYesBtn = (Button) findViewById(R.id.YES);
+        chsYesBtn.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
+                        startActivity(i);
+                    }
+                }
+        );
+    }
+
+    // when no button is pressed, go to the corresponding next decisionactivity or decision leaf
+    protected void chooseNoButton() {
+        final Button chsNoBtn = (Button) findViewById(R.id.NO);
+        chsNoBtn.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
+                        startActivity(i);
+
+                    }
+                }
+        );
+
     }
 
 
