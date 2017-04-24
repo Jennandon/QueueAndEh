@@ -16,26 +16,14 @@
         android:layout_marginTop="50dp" />
 
     <Button
-        android:text="go back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/back"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"
-        android:fontFamily="monospace"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/imageView4"
-        android:layout_toStartOf="@+id/imageView4" />
-
-    <Button
         android:text="start again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button5"
+        android:id="@+id/start_over"
         style="@android:style/Widget.Material.Button.Borderless.Colored"
         android:fontFamily="monospace"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/imageView4"
-        android:layout_toEndOf="@+id/imageView4" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="THEN FIGURE IT OUT YOUR DAMN SELF!"
@@ -45,19 +33,17 @@
         android:textSize="24sp"
         android:textColor="@color/abc_input_method_navigation_guard"
         android:fontFamily="monospace"
-        android:layout_marginBottom="100dp"
-        android:layout_above="@+id/back"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="37dp" />
 
     <ImageView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:background="@drawable/link2"
            android:id="@+id/imageView6"
-           android:layout_alignTop="@+id/imageView4"
-           android:layout_centerHorizontal="true" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
    </RelativeLayout>

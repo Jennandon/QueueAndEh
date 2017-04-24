@@ -28,8 +28,12 @@ public class StartActivity extends Activity {
         GameData.loadInstance(this.getResources());
         GameData gameData = GameData.getInstance();
 
+        setYesButton();
+        setNoButton();
+    }
 
-        // when yes button is pressed, go to main decision view
+    // when yes button is pressed, go to main decision view
+    protected void setYesButton() {
         final Button yesBtn = (Button) findViewById(R.id.YES);
         yesBtn.setOnClickListener(
                 new Button.OnClickListener() {
@@ -43,9 +47,10 @@ public class StartActivity extends Activity {
                     }
                 }
         );
+    }
 
-
-        // when no button is pressed, end and tell user to make their own decision
+    // when no button is pressed, end and tell user to make their own decision
+    protected void setNoButton() {
         final Button noBtn = (Button) findViewById(R.id.NO);
         noBtn.setOnClickListener(
                 new Button.OnClickListener() {
