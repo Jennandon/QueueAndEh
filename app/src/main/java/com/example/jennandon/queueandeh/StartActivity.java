@@ -27,6 +27,9 @@ public class StartActivity extends Activity {
         setContentView(R.layout.testlayoutxml);
         GameData.loadInstance(this.getResources());
         GameData gameData = GameData.getInstance();
+
+
+        // when yes button is pressed, go to main decision view
         final Button yesBtn = (Button) findViewById(R.id.YES);
         yesBtn.setOnClickListener(
                 new Button.OnClickListener() {
@@ -41,6 +44,8 @@ public class StartActivity extends Activity {
                 }
         );
 
+
+        // when no button is pressed, end and tell user to make their own decision
         final Button noBtn = (Button) findViewById(R.id.NO);
         noBtn.setOnClickListener(
                 new Button.OnClickListener() {
@@ -48,7 +53,7 @@ public class StartActivity extends Activity {
                     public void onClick(View view) {
                         Intent i = new Intent(StartActivity.this, MakeYourOwnDecisionActivity.class);
                         startActivity(i);
-                        //overridePendingTransition(R.anim.slide_in_from_right, android.R.anim.fade_out);
+
                     }
                 }
         );

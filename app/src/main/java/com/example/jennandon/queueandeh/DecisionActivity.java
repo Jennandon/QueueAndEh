@@ -1,5 +1,6 @@
 package com.example.jennandon.queueandeh;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.view.View;
  * Created by andrewbates11 on 2017-02-21.
  */
 
-public class DecisionActivity extends ActionBarActivity {
+public class DecisionActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +19,5 @@ public class DecisionActivity extends ActionBarActivity {
 
     }
 
-    /** Called when the user clicks the Send button */
-    public void sendMessage(View view) {
 
-        // Do something in response to button
-    }
 }
