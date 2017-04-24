@@ -40,5 +40,18 @@ public class StartActivity extends Activity {
                     }
                 }
         );
+
+        final Button noBtn = (Button) findViewById(R.id.NO);
+        noBtn.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(StartActivity.this, MakeYourOwnDecisionActivity.class);
+                        startActivity(i);
+                        //overridePendingTransition(R.anim.slide_in_from_right, android.R.anim.fade_out);
+                    }
+                }
+        );
+
     }
 }

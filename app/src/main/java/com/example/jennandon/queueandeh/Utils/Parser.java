@@ -1,6 +1,5 @@
 package com.example.jennandon.queueandeh.Utils;
 
-import android.app.Activity;
 import android.content.res.Resources;
 import android.util.Xml;
 
@@ -10,14 +9,9 @@ import com.example.jennandon.queueandeh.R;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,7 +22,7 @@ public class Parser{
 
         public Map<Integer, Decision> loadData(Resources resources){
             try{
-                return parseDecisionsXML(resources.openRawResource(R.raw.example1));
+                return parseDecisionsXML(resources.openRawResource(R.raw.decisiontreexml));
             }
             catch(XmlPullParserException e){
                 //TODO: Add logging here
