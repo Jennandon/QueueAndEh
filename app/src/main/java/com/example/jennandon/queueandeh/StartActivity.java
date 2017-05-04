@@ -32,11 +32,10 @@ public class StartActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //yesBtn.setBackgroundColor(Color.RED);
                         Intent i = new Intent(StartActivity.this, DecisionActivity.class);
-                        //i.putExtra(getString(R.string.stop_name_key), stop.getNumber());
                         startActivity(i);
-                        //overridePendingTransition(R.anim.slide_in_from_right, android.R.anim.fade_out);
+
+                       // overridePendingTransition(R.anim.abc_slide_in_top, android.R.anim.fade_out);
                     }
                 }
         );
@@ -51,6 +50,8 @@ public class StartActivity extends Activity {
                     public void onClick(View view) {
                         Intent i = new Intent(StartActivity.this, MakeYourOwnDecisionActivity.class);
                         startActivity(i);
+
+                        //overridePendingTransition(R.anim.abc_slide_in_top, android.R.anim.fade_out);
 
                     }
                 }

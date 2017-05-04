@@ -3,7 +3,6 @@ package com.example.jennandon.queueandeh;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,7 +16,7 @@ import android.widget.Button;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.makeyourowndecisionend);
+            setContentView(R.layout.makeyourowndecision);
             this.getResources().openRawResource(R.raw.decisiontreexml);
 
             // TODO: refactor so that the code isn't duplicated in decisionActivity

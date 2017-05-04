@@ -18,7 +18,8 @@ public class Decision {
     private Integer id;
     private Integer rootId;
     private Integer parentId;
-    private Map<Integer, String> subDecisions;
+    private Integer yesSubdecision;
+    private Integer noSubdecision;
     private String soundPath;
     private String imagePath;
     private List<String> resources;
@@ -28,7 +29,8 @@ public class Decision {
         this.id = null;
         this.rootId = null;
         this.parentId = null;
-        this.subDecisions = new HashMap<>();
+        this.yesSubdecision = null;
+        this.noSubdecision = null;
         this.soundPath = null;
         this.imagePath = null;
         this.resources = null;
@@ -58,12 +60,13 @@ public class Decision {
         this.parentId = parentId;
     }
 
-    public Map<Integer, String> getSubDecisions() {return subDecisions;
-    }
+    public Integer getYesSubdecision() {return yesSubdecision;}
 
-    public void setSubDecisions(Map<Integer, String> subDecisions) {
-        this.subDecisions = subDecisions;
-    }
+    public void setYesSubdecision(Integer yesSubdecision) {this.yesSubdecision = yesSubdecision;}
+
+    public Integer getNoSubdecision() {return noSubdecision;}
+
+    public void setNoSubdecision(Integer noSubdecision) {this.noSubdecision = noSubdecision;}
 
     public String getSoundPath() {
         return soundPath;
@@ -96,4 +99,12 @@ public class Decision {
     public void setText(String text) {
         this.text = text;
     }
+
+    /*
+    returns true if this decision has no subDecisions and is leaf of decisionTree
+     */
+    public boolean isLeaf() {
+        return (this.yesSubdecision == null && this.noSubdecision == null);
+    }
+
 }

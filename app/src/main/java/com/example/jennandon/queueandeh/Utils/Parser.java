@@ -104,51 +104,19 @@ public class Parser{
 
                 } else if (name.equals("resources")) {
                     readTextField(parser, "resources");
-                }else if (name.equals("subdecisions")) {
-                    readSubDecisions(parser, decision);
-                }else{
+
+                }else if (name.equals("yes_child_id")) {
+                    decision.setYesSubdecision(Integer.parseInt(readTextField(parser, "yes_child_id")));
+                }
+
+                else if (name.equals("no_child_id")) {
+                    decision.setYesSubdecision(Integer.parseInt(readTextField(parser, "no_child_id")));
+                }
+                else{
                     skip(parser);
                 }
             }
             return decision;
-        }
-        private void readSubDecisions(XmlPullParser parser, Decision decision)
-                throws XmlPullParserException, IOException {
-            parser.require(XmlPullParser.START_TAG, ns, "subdecisions");
-
-            while (parser.next() != XmlPullParser.END_TAG) {
-                if (parser.getEventType() != XmlPullParser.START_TAG) {
-                    continue;
-                }
-                String name = parser.getName();
-
-                if (name.equals("subdecision")) {
-                    String subdecisionID = parser.getAttributeValue(null, "id");
-                    String textValue = readTextField(parser, "subdecision");
-                    decision.getSubDecisions().put(Integer.parseInt(subdecisionID), textValue);
-                }
-                else{
-                    parser.next();
-                }
-            }
-        }
-        //// DOES NOTHING HERE ---- JUST FROM EXAMPLE
-        // Processes link tags in the feed. / //// going to be decision tag
-        private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {
-            String link = "";
-            parser.require(XmlPullParser.START_TAG, ns, "link");
-
-
-            String tag = parser.getName();
-            String relType = parser.getAttributeValue(null, "rel");
-            if (tag.equals("link")) {
-                if (relType.equals("alternate")) {
-                    link = parser.getAttributeValue(null, "href");
-                    parser.nextTag();
-                }
-            }
-            parser.require(XmlPullParser.END_TAG, ns, "link");
-            return link;
         }
 
         private String readTextField(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {

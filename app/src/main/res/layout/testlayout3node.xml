@@ -86,8 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/link2"
+        android:layout_marginBottom="22dp"
         android:layout_above="@+id/decisionText"
-        android:layout_alignRight="@+id/NO"
-        android:layout_alignEnd="@+id/NO"
-        android:layout_marginBottom="26dp" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
