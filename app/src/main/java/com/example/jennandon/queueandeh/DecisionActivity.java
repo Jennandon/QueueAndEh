@@ -21,17 +21,25 @@ public class DecisionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.testlayout3node);
         this.getResources().openRawResource(R.raw.decisiontreexml);
+
+        Integer extra = getIntent().getIntExtra("yesSubdecision", -1);
+        currentDecision = DecisionManager.getInstance().getGlobalMap().get(extra);
 
         // TODO: refactor this
         setStartOverBtn();
         setDecisionFields();
+
+
+
     }
 
     //sets decision fields for the current decision
     protected void setDecisionFields() {
-        currentDecision = DecisionManager.getInstance().getFirstDecision();
 
         // display the current decision's text
         TextView decisionTextView = (TextView) findViewById(R.id.decisionText);
@@ -59,7 +67,7 @@ public class DecisionActivity extends Activity {
         );
     }
 
-    // when yes button is pressed, go to the corresponding decisionactivity or decision leaf
+    // when yes button is pressed, go to this decision's "yes" subDecision
     protected void chooseYesButton() {
         final Button chsYesBtn = (Button) findViewById(R.id.YES);
         chsYesBtn.setOnClickListener(
@@ -68,12 +76,13 @@ public class DecisionActivity extends Activity {
                     public void onClick(View view) {
                         Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
                         startActivity(i);
+                        i.putExtra("yesSubdecision", currentDecision.getYesSubdecision());
                     }
                 }
         );
     }
 
-    // when no button is pressed, go to the corresponding next decisionactivity or decision leaf
+    // when no button is pressed, go to this decision's "no" subDecision
     protected void chooseNoButton() {
         final Button chsNoBtn = (Button) findViewById(R.id.NO);
         chsNoBtn.setOnClickListener(
@@ -81,6 +90,7 @@ public class DecisionActivity extends Activity {
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
+
                         startActivity(i);
 
                     }
