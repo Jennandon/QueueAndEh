@@ -80,8 +80,6 @@ public class Parser{
 
             String stringID = parser.getAttributeValue(null, "id");
             decision.setId(Integer.parseInt(stringID));
-            String stringRoot = parser.getAttributeValue(null, "root");
-            decision.setRootId(Integer.parseInt(stringRoot));
             String stringParent = parser.getAttributeValue(null, "parent");
             decision.setParentId(Integer.parseInt(stringParent));
 

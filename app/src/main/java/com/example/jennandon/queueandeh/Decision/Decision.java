@@ -17,7 +17,6 @@ import java.util.Map;
 public class Decision {
     private String text;
     private Integer id;
-    private Integer rootId;
     private Integer parentId;
     private Integer yesSubdecision;
     private Integer noSubdecision;
@@ -28,7 +27,6 @@ public class Decision {
     public Decision(){
         this.text = null;
         this.id = null;
-        this.rootId = null;
         this.parentId = null;
         this.yesSubdecision = null;
         this.noSubdecision = null;
@@ -43,14 +41,6 @@ public class Decision {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getRootId() {
-        return rootId;
-    }
-
-    public void setRootId(Integer rootId) {
-        this.rootId = rootId;
     }
 
     public Integer getParentId() {
