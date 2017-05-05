@@ -1,6 +1,7 @@
 package com.example.jennandon.queueandeh.Utils;
 
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.util.Xml;
 
 import com.example.jennandon.queueandeh.Decision.Decision;
@@ -95,7 +96,7 @@ public class Parser{
                     System.out.println(decision.getText());
 
                 } else if (name.equals("picture")) {
-                    decision.setImagePath(readTextField(parser, "picture"));
+                    decision.setImagePath(Drawable.createFromPath(readTextField(parser, "picture")));
                     System.out.println(decision.getImagePath());
 
                 } else if (name.equals("sound")) {

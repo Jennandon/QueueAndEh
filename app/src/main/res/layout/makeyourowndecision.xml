@@ -41,7 +41,7 @@
         android:layout_marginStart="28dp" />
 
     <ImageView
-        android:id="@+id/sampleimage"
+        android:id="@+id/decision_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/link2"

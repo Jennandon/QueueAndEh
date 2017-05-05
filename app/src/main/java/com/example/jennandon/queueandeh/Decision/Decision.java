@@ -4,6 +4,7 @@ package com.example.jennandon.queueandeh.Decision;
  * Created by andrewbates11 on 2017-02-21.
  */
 
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 
 import java.util.HashMap;
@@ -21,7 +22,7 @@ public class Decision {
     private Integer yesSubdecision;
     private Integer noSubdecision;
     private String soundPath;
-    private String imagePath;
+    private Drawable imagePath;
     private List<String> resources;
 
     public Decision(){
@@ -76,11 +77,11 @@ public class Decision {
         this.soundPath = soundPath;
     }
 
-    public String getImagePath() {
+    public Drawable getImagePath() {
         return imagePath;
     }
 
-    public void setImagePath(String imagePath) {
+    public void setImagePath(Drawable imagePath) {
         this.imagePath = imagePath;
     }
 

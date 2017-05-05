@@ -14,7 +14,7 @@
 
     <decision id="2" root="1" parent="1">
         <text>DO YOU HAVE THE WHOLE DAY?</text>
-        <picture></picture>
+        <picture>R.drawable.evillink</picture>
         <sound></sound>
         <resources> </resources>
         <yes_child_id>4</yes_child_id>

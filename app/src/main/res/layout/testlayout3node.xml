@@ -82,10 +82,10 @@
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:id="@+id/sampleimage"
+        android:id="@+id/decision_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/link2"
+        android:src="@drawable/link1"
         android:layout_marginBottom="22dp"
         android:layout_above="@+id/decisionText"
         android:layout_centerHorizontal="true" />

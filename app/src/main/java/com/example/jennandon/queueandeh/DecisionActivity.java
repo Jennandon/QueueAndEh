@@ -2,10 +2,7 @@ package com.example.jennandon.queueandeh;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,8 +10,6 @@ import android.widget.TextView;
 
 import com.example.jennandon.queueandeh.Decision.Decision;
 import com.example.jennandon.queueandeh.Utils.DecisionTree;
-
-import java.util.HashMap;
 
 /**
  * Created by andrewbates11 on 2017-02-21.
@@ -41,11 +36,8 @@ public class DecisionActivity extends Activity {
         TextView decisionTextView = (TextView) findViewById(R.id.decisionText);
         decisionTextView.setText(currentDecision.getText());
 
-
-        ImageView decisionImageView = (ImageView) findViewById(R.id.sampleimage);
-        Bitmap decisionBitmap = BitmapFactory.decodeFile(currentDecision.getImagePath());
-        decisionImageView.setImageBitmap(decisionBitmap);
-
+         ImageView decisionImageView = (ImageView) findViewById(R.id.decision_image);
+         decisionImageView.setImageDrawable(currentDecision.getImagePath());
     }
 
 
