@@ -30,10 +30,12 @@ public class DecisionActivity extends Activity {
 
         // TODO: refactor this
         setStartOverBtn();
+
         setDecisionFields();
 
         setYesButton();
         setNoButton();
+        setGoBackBtn();
     }
 
     //sets decision fields for the current decision
@@ -65,19 +67,25 @@ public class DecisionActivity extends Activity {
         );
     }
 
-//    //sets the button for going back to the parent decision
-//    protected void setGoBackBtn(){
-//        final Button goBackBtn = (Button) findViewById(R.id.back);
-//        goBackBtn.setOnClickListener(
-//                new Button.OnClickListener(){
-//                    @Override
-//                    public void onClick(View view){
-//                        Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
-//                        startActivity(i);
-//                    }
-//                }
-//        );
-//    }
+    //sets the button for going back to the parent decision
+    protected void setGoBackBtn(){
+        final Button goBackBtn = (Button) findViewById(R.id.back);
+        goBackBtn.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (currentDecision.getId() != 2) {
+                            Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
+                            i.putExtra("decision", currentDecision.getParentId());
+                            startActivity(i);
+                        } else {
+                            Intent i = new Intent(DecisionActivity.this, StartActivity.class);
+                            startActivity(i);
+                        }
+                    }
+                }
+        );
+    }
 
     // when yes button is pressed, go to this decision's "yes" subDecision
     protected void setYesButton() {
