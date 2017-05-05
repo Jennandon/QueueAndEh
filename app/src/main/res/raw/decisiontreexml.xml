@@ -2,15 +2,6 @@
 
 <decisions>
 
-    <decision id="1" parent="-1">
-        <text>ARE YOU FEELING INDECISIVE?</text>
-        <picture></picture>
-        <sound></sound>
-        <resources></resources>
-        <yes_child_id>2</yes_child_id>
-        <no_child_id>3</no_child_id>
-    </decision>
-
     <decision id="2" parent="1">
         <text>DO YOU HAVE THE WHOLE DAY?</text>
         <picture>sunshine</picture>
@@ -48,14 +39,14 @@
 
     <decision id="6" parent="5">
         <text>HOP ON A BIKE! IF YOU DON’T HAVE ONE ASK YOUR FRIENDLIEST NEIGHBOUR!</text>
-        <picture></picture>
+        <picture>bike</picture>
         <sound></sound>
         <resources></resources>
     </decision>
 
     <decision id="7"  parent="5">
         <text>GRAB A BEER AT BRASSNECK BREWING!</text>
-        <picture></picture>
+        <picture>beer</picture>
         <sound></sound>
         <resources></resources>
     </decision>
