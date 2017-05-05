@@ -27,15 +27,15 @@ public class DecisionActivity extends Activity {
         setContentView(R.layout.testlayout3node);
         this.getResources().openRawResource(R.raw.decisiontreexml);
 
-        Integer extra = getIntent().getIntExtra("yesSubdecision", -1);
+        Integer extra = getIntent().getIntExtra("decision", 2);
         currentDecision = DecisionManager.getInstance().getGlobalMap().get(extra);
 
         // TODO: refactor this
         setStartOverBtn();
         setDecisionFields();
 
-
-
+        setYesButton();
+        setNoButton();
     }
 
     //sets decision fields for the current decision
@@ -68,31 +68,31 @@ public class DecisionActivity extends Activity {
     }
 
     // when yes button is pressed, go to this decision's "yes" subDecision
-    protected void chooseYesButton() {
+    protected void setYesButton() {
         final Button chsYesBtn = (Button) findViewById(R.id.YES);
         chsYesBtn.setOnClickListener(
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
+                        i.putExtra("decision", currentDecision.getYesSubdecision());
                         startActivity(i);
-                        i.putExtra("yesSubdecision", currentDecision.getYesSubdecision());
+
                     }
                 }
         );
     }
 
     // when no button is pressed, go to this decision's "no" subDecision
-    protected void chooseNoButton() {
+    protected void setNoButton() {
         final Button chsNoBtn = (Button) findViewById(R.id.NO);
         chsNoBtn.setOnClickListener(
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
-
+                        i.putExtra("decision", currentDecision.getNoSubdecision());
                         startActivity(i);
-
                     }
                 }
         );
