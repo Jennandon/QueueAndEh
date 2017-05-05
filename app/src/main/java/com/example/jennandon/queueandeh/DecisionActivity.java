@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jennandon.queueandeh.Decision.Decision;
-import com.example.jennandon.queueandeh.Utils.DecisionTree;
+import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
 /**
  * Created by andrewbates11 on 2017-02-21.
@@ -31,7 +31,7 @@ public class DecisionActivity extends Activity {
 
     //sets decision fields for the current decision
     protected void setDecisionFields() {
-        currentDecision = DecisionTree.getInstance().getFirstDecision();
+        currentDecision = DecisionManager.getInstance().getFirstDecision();
 
         // display the current decision's text
         TextView decisionTextView = (TextView) findViewById(R.id.decisionText);
@@ -39,7 +39,7 @@ public class DecisionActivity extends Activity {
 
         // display the current decision's image
         ImageView decisionImageView = (ImageView) findViewById(R.id.decision_image);
-        String variableValue = currentDecision.getImagePath();
+        String variableValue = currentDecision.getImageName();
         decisionImageView.setImageResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
     }
 

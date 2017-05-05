@@ -4,12 +4,7 @@ package com.example.jennandon.queueandeh.Decision;
  * Created by andrewbates11 on 2017-02-21.
  */
 
-import android.graphics.drawable.Drawable;
-import android.media.MediaPlayer;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * A class to model the decisions parsed from the XML
@@ -21,7 +16,7 @@ public class Decision {
     private Integer yesSubdecision;
     private Integer noSubdecision;
     private String soundPath;
-    private String imagePath;
+    private String imageName;
     private List<String> resources;
 
     public Decision(){
@@ -31,7 +26,7 @@ public class Decision {
         this.yesSubdecision = null;
         this.noSubdecision = null;
         this.soundPath = null;
-        this.imagePath = null;
+        this.imageName = null;
         this.resources = null;
     }
 
@@ -67,12 +62,12 @@ public class Decision {
         this.soundPath = soundPath;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
     public List<String> getResources() {

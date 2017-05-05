@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.jennandon.queueandeh.Utils.DecisionTree;
+import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
 /**
  * Created by andrewbates11 on 2017-02-21.
@@ -18,8 +18,8 @@ public class StartActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testlayoutxml);
-        DecisionTree.loadInstance(this.getResources());
-        DecisionTree decisionTree = DecisionTree.getInstance();
+        DecisionManager.loadInstance(this.getResources());
+        DecisionManager decisionManager = DecisionManager.getInstance();
 
         setYesButton();
         setNoButton();
