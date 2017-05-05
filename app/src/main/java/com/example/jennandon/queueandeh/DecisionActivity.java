@@ -33,11 +33,14 @@ public class DecisionActivity extends Activity {
     protected void setDecisionFields() {
         currentDecision = DecisionTree.getInstance().getFirstDecision();
 
+        // display the current decision's text
         TextView decisionTextView = (TextView) findViewById(R.id.decisionText);
         decisionTextView.setText(currentDecision.getText());
 
-         ImageView decisionImageView = (ImageView) findViewById(R.id.decision_image);
-         decisionImageView.setImageDrawable(currentDecision.getImagePath());
+        // display the current decision's image
+        ImageView decisionImageView = (ImageView) findViewById(R.id.decision_image);
+        String variableValue = currentDecision.getImagePath();
+        decisionImageView.setImageResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
     }
 
 

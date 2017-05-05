@@ -22,7 +22,7 @@ public class Decision {
     private Integer yesSubdecision;
     private Integer noSubdecision;
     private String soundPath;
-    private Drawable imagePath;
+    private String imagePath;
     private List<String> resources;
 
     public Decision(){
@@ -77,11 +77,11 @@ public class Decision {
         this.soundPath = soundPath;
     }
 
-    public Drawable getImagePath() {
+    public String getImagePath() {
         return imagePath;
     }
 
-    public void setImagePath(Drawable imagePath) {
+    public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
 

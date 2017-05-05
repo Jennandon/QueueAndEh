@@ -92,26 +92,26 @@ public class Parser{
                 String name = parser.getName();
 
                 if (name.equals("text")) {
-                    decision.setText(readTextField(parser, "text"));
+                    decision.setText(readTextField(parser));
                     System.out.println(decision.getText());
 
                 } else if (name.equals("picture")) {
-                    decision.setImagePath(Drawable.createFromPath(readTextField(parser, "picture")));
+                    decision.setImagePath(readTextField(parser));
                     System.out.println(decision.getImagePath());
 
                 } else if (name.equals("sound")) {
-                    decision.setSoundPath(readTextField(parser, "sound"));
+                    decision.setSoundPath(readTextField(parser));
                     System.out.println(decision.getSoundPath());
 
                 } else if (name.equals("resources")) {
-                    readTextField(parser, "resources");
+                    readTextField(parser);
 
                 }else if (name.equals("yes_child_id")) {
-                    decision.setYesSubdecision(Integer.parseInt(readTextField(parser, "yes_child_id")));
+                    decision.setYesSubdecision(Integer.parseInt(readTextField(parser)));
                 }
 
                 else if (name.equals("no_child_id")) {
-                    decision.setYesSubdecision(Integer.parseInt(readTextField(parser, "no_child_id")));
+                    decision.setYesSubdecision(Integer.parseInt(readTextField(parser)));
                 }
                 else{
                     skip(parser);
@@ -120,14 +120,7 @@ public class Parser{
             return decision;
         }
 
-        private String readTextField(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
-            parser.require(XmlPullParser.START_TAG, ns, tag);
-            String subDecisionText = readTextField(parser);
-            parser.require(XmlPullParser.END_TAG, ns, tag);
-            return subDecisionText;
-        }
-
-        // For the tags title and summary, extracts their text values.
+        // For the tags of the decision, extracts their text values.
         private String readTextField(XmlPullParser parser) throws IOException, XmlPullParserException {
             String result = "";
             if (parser.next() == XmlPullParser.TEXT) {
