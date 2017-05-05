@@ -108,7 +108,7 @@ public class Parser{
                 }
 
                 else if (name.equals("no_child_id")) {
-                    decision.setYesSubdecision(Integer.parseInt(readTextField(parser)));
+                    decision.setNoSubdecision(Integer.parseInt(readTextField(parser)));
                 }
                 else{
                     skip(parser);
