@@ -67,6 +67,20 @@ public class DecisionActivity extends Activity {
         );
     }
 
+//    //sets the button for going back to the parent decision
+//    protected void setGoBackBtn(){
+//        final Button goBackBtn = (Button) findViewById(R.id.back);
+//        goBackBtn.setOnClickListener(
+//                new Button.OnClickListener(){
+//                    @Override
+//                    public void onClick(View view){
+//                        Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
+//                        startActivity(i);
+//                    }
+//                }
+//        );
+//    }
+
     // when yes button is pressed, go to this decision's "yes" subDecision
     protected void chooseYesButton() {
         final Button chsYesBtn = (Button) findViewById(R.id.YES);
