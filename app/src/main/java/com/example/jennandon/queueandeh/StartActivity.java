@@ -17,7 +17,7 @@ public class StartActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.testlayoutxml);
+        setContentView(R.layout.startdecisionlayout);
         DecisionManager.loadInstance(this.getResources());
         DecisionManager decisionManager = DecisionManager.getInstance();
 
