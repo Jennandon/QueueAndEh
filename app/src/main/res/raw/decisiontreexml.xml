@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <decisions>
-
     <decision id="2" parent="1">
         <text>DO YOU HAVE THE WHOLE DAY?</text>
         <picture>sunshine</picture>
@@ -9,13 +8,6 @@
         <resources> </resources>
         <yes_child_id>4</yes_child_id>
         <no_child_id>5</no_child_id>
-    </decision>
-
-    <decision id="3" parent="1">
-        <text>THEN GO MAKE YOUR OWN DAMN DECISION!</text>
-        <picture></picture>
-        <sound></sound>
-        <resources></resources>
     </decision>
 
     <decision id="4" parent="2">

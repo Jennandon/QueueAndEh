@@ -17,7 +17,6 @@ import android.widget.Button;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.yourowndecisionlayout);
-            this.getResources().openRawResource(R.raw.decisiontreexml);
 
             // TODO: refactor so that the code isn't duplicated in decisionActivity
             setStartOverBtn();
