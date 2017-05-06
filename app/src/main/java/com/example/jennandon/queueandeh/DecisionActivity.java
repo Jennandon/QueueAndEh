@@ -23,7 +23,6 @@ public class DecisionActivity extends Activity {
         super.onCreate(savedInstanceState);
         
         setContentView(R.layout.decisionlayout);
-        this.getResources().openRawResource(R.raw.decisiontreexml);
 
         Integer extra = getIntent().getIntExtra("decision", 2);
         currentDecision = DecisionManager.getInstance().getGlobalMap().get(extra);

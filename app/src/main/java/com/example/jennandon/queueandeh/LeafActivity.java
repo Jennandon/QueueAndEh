@@ -22,8 +22,7 @@ public class LeafActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.decisionlayout);
-        this.getResources().openRawResource(R.raw.decisiontreexml);
+        setContentView(R.layout.leaflayout);
 
         Integer extra = getIntent().getIntExtra("decision", 2);
         currentDecision = DecisionManager.getInstance().getGlobalMap().get(extra);
@@ -70,7 +69,7 @@ public class LeafActivity extends Activity {
                     @Override
                     public void onClick(View view) {
                         if (currentDecision.getId() != 2) {
-                            Intent i = new Intent(LeafActivity.this, LeafActivity.class);
+                            Intent i = new Intent(LeafActivity.this, DecisionActivity.class);
                             i.putExtra("decision", currentDecision.getParentId());
                             startActivity(i);
                         } else {

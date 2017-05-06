@@ -32,6 +32,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MakeYourOwnDecisionActivity" />
         </activity>
+        <activity
+            android:name=".LeafActivity"
+            android:label="Leaf"
+            android:parentActivityName=".DecisionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LeafActivity" />
+        </activity>
     </application>
 
 </manifest>
