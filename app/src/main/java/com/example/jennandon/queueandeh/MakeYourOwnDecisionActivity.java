@@ -34,6 +34,7 @@ import android.widget.Button;
                         Intent i = new Intent(MakeYourOwnDecisionActivity.this, StartActivity.class);
                         //i.putExtra(getString(R.string.stop_name_key), stop.getNumber());
                         startActivity(i);
+                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                     }
                 }
         );

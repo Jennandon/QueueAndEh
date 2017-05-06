@@ -35,7 +35,7 @@ public class StartActivity extends Activity {
                         Intent i = new Intent(StartActivity.this, DecisionActivity.class);
                         startActivity(i);
 
-                       overridePendingTransition(R.anim.abc_slide_in_top, android.R.anim.fade_out);
+                       overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                     }
                 }
         );
@@ -51,7 +51,7 @@ public class StartActivity extends Activity {
                         Intent i = new Intent(StartActivity.this, MakeYourOwnDecisionActivity.class);
                         startActivity(i);
 
-                        //overridePendingTransition(R.anim.abc_slide_in_top, android.R.anim.fade_out);
+                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
 
                     }
                 }
