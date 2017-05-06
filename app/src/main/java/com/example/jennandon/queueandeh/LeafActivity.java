@@ -15,13 +15,13 @@ import com.example.jennandon.queueandeh.Utils.DecisionManager;
  * Created by andrewbates11 on 2017-02-21.
  */
 
-public class DecisionActivity extends Activity {
+public class LeafActivity extends Activity {
     private Decision currentDecision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         setContentView(R.layout.testlayout3node);
         this.getResources().openRawResource(R.raw.decisiontreexml);
 
@@ -30,11 +30,7 @@ public class DecisionActivity extends Activity {
 
         // TODO: refactor this
         setStartOverBtn();
-
         setDecisionFields();
-
-        setYesButton();
-        setNoButton();
         setGoBackBtn();
     }
 
@@ -52,7 +48,6 @@ public class DecisionActivity extends Activity {
     }
 
 
-
     // sets the button for going back to the start
     protected void setStartOverBtn() {
         final Button startOverBtn = (Button) findViewById(R.id.start_over);
@@ -60,7 +55,7 @@ public class DecisionActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(DecisionActivity.this, StartActivity.class);
+                        Intent i = new Intent(LeafActivity.this, StartActivity.class);
                         startActivity(i);
                     }
                 }
@@ -68,73 +63,22 @@ public class DecisionActivity extends Activity {
     }
 
     //sets the button for going back to the parent decision
-    protected void setGoBackBtn(){
+    protected void setGoBackBtn() {
         final Button goBackBtn = (Button) findViewById(R.id.back);
         goBackBtn.setOnClickListener(
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if (currentDecision.getId() != 2) {
-                            Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
+                            Intent i = new Intent(LeafActivity.this, LeafActivity.class);
                             i.putExtra("decision", currentDecision.getParentId());
                             startActivity(i);
                         } else {
-                            Intent i = new Intent(DecisionActivity.this, StartActivity.class);
+                            Intent i = new Intent(LeafActivity.this, StartActivity.class);
                             startActivity(i);
                         }
                     }
                 }
         );
     }
-
-    // when yes button is pressed, go to this decision's "yes" subDecision
-    protected void setYesButton() {
-        final Button chsYesBtn = (Button) findViewById(R.id.YES);
-        chsYesBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (DecisionManager.getInstance().getGlobalMap().get(currentDecision.getYesSubdecision()).isLeaf()) {
-                            Intent i = new Intent(DecisionActivity.this, LeafActivity.class);
-                            i.putExtra("decision", currentDecision.getYesSubdecision());
-                            startActivity(i);
-                        }
-
-                        else {
-                            Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
-                            i.putExtra("decision", currentDecision.getYesSubdecision());
-                            startActivity(i);
-                        }
-
-                    }
-                }
-        );
-    }
-
-    // when no button is pressed, go to this decision's "no" subDecision
-    protected void setNoButton() {
-        final Button chsNoBtn = (Button) findViewById(R.id.NO);
-        chsNoBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        if (DecisionManager.getInstance().getGlobalMap().get(currentDecision.getNoSubdecision()).isLeaf()) {
-                            Intent i = new Intent(DecisionActivity.this, LeafActivity.class);
-                            i.putExtra("decision", currentDecision.getNoSubdecision());
-                            startActivity(i);
-                        }
-
-                        else {
-                            Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
-                            i.putExtra("decision", currentDecision.getNoSubdecision());
-                            startActivity(i);
-                        }
-                    }
-                }
-        );
-
-    }
-
-
 }
