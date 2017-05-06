@@ -28,7 +28,7 @@ public class DecisionManager {
                 if(ourInstance == null){
                     ourInstance = new DecisionManager();
                     Parser parser = new Parser();
-                    ourInstance.setGlobalMap(parser.loadData(resources));
+                    ourInstance.setDecisionMap(parser.loadData(resources));
                 }
             }
         }
@@ -37,15 +37,11 @@ public class DecisionManager {
         return ourInstance;
     }
 
-    public Map<Integer, Decision> getGlobalMap() {
+    public Map<Integer, Decision> getDecisionMap() {
         return decisionMap;
     }
 
-    public Decision getFirstDecision() {
-        return decisionMap.get(2);
-    }
-
-    public void setGlobalMap(final Map<Integer, Decision> decisionMap){
+    public void setDecisionMap(final Map<Integer, Decision> decisionMap){
         this.decisionMap = decisionMap;
     }
 

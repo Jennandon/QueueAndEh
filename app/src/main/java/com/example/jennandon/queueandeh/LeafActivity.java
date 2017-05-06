@@ -25,7 +25,7 @@ public class LeafActivity extends Activity {
         setContentView(R.layout.leaflayout);
 
         Integer extra = getIntent().getIntExtra("decision", 2);
-        currentDecision = DecisionManager.getInstance().getGlobalMap().get(extra);
+        currentDecision = DecisionManager.getInstance().getDecisionMap().get(extra);
 
         // TODO: refactor this
         setStartOverBtn();

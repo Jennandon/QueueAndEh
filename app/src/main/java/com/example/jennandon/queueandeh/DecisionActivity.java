@@ -25,7 +25,7 @@ public class DecisionActivity extends Activity {
         setContentView(R.layout.decisionlayout);
 
         Integer extra = getIntent().getIntExtra("decision", 2);
-        currentDecision = DecisionManager.getInstance().getGlobalMap().get(extra);
+        currentDecision = DecisionManager.getInstance().getDecisionMap().get(extra);
 
         // TODO: refactor this
         setStartOverBtn();
@@ -101,7 +101,7 @@ public class DecisionActivity extends Activity {
                     public void onClick(View view) {
                         Intent i;
 
-                        if (DecisionManager.getInstance().getGlobalMap().get(currentDecision.getYesSubdecision()).isLeaf()) {
+                        if (DecisionManager.getInstance().getDecisionMap().get(currentDecision.getYesSubdecision()).isLeaf()) {
                             i = new Intent(DecisionActivity.this, LeafActivity.class);
                         }
 
@@ -127,7 +127,7 @@ public class DecisionActivity extends Activity {
                     public void onClick(View view) {
                         Intent i;
 
-                        if (DecisionManager.getInstance().getGlobalMap().get(currentDecision.getNoSubdecision()).isLeaf()) {
+                        if (DecisionManager.getInstance().getDecisionMap().get(currentDecision.getNoSubdecision()).isLeaf()) {
                             i = new Intent(DecisionActivity.this, LeafActivity.class);
                         }
 
