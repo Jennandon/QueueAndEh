@@ -61,6 +61,8 @@ public class DecisionActivity extends Activity {
                     public void onClick(View view) {
                         Intent i = new Intent(DecisionActivity.this, StartActivity.class);
                         startActivity(i);
+
+                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                     }
                 }
         );
@@ -77,9 +79,13 @@ public class DecisionActivity extends Activity {
                             Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
                             i.putExtra("decision", currentDecision.getParentId());
                             startActivity(i);
+
+                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                         } else {
                             Intent i = new Intent(DecisionActivity.this, StartActivity.class);
                             startActivity(i);
+
+                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                         }
                     }
                 }
@@ -105,6 +111,8 @@ public class DecisionActivity extends Activity {
 
                         i.putExtra("decision", currentDecision.getYesSubdecision());
                         startActivity(i);
+
+                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                     }
                 }
         );
@@ -129,6 +137,8 @@ public class DecisionActivity extends Activity {
 
                         i.putExtra("decision", currentDecision.getNoSubdecision());
                         startActivity(i);
+
+                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                     }
                 }
         );

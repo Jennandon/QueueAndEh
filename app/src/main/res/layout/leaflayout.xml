@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/link1"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="42dp"
         android:layout_above="@+id/decisionText"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
