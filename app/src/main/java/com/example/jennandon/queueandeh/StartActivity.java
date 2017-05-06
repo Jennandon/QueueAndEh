@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
 /**
- * Created by andrewbates11 on 2017-02-21.
+ * Created by shanben7 on 2017-02-21.
  */
 
 public class StartActivity extends Activity {
