@@ -155,6 +155,7 @@ public class DecisionActivity extends Activity {
                         Intent i = new Intent(DecisionActivity.this, LeafActivity.class);
                         i.putExtra("decision", DecisionManager.getInstance().getRandomLeafId());
                         startActivity(i);
+                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                    }
                 }
         );
