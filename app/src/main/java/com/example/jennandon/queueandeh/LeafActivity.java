@@ -58,6 +58,7 @@ public class LeafActivity extends Activity {
                     public void onClick(View view) {
                         Intent i = new Intent(LeafActivity.this, StartActivity.class);
                         startActivity(i);
+                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                     }
                 }
         );
@@ -74,9 +75,11 @@ public class LeafActivity extends Activity {
                             Intent i = new Intent(LeafActivity.this, DecisionActivity.class);
                             i.putExtra("decision", currentDecision.getParentId());
                             startActivity(i);
+                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                         } else {
                             Intent i = new Intent(LeafActivity.this, StartActivity.class);
                             startActivity(i);
+                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                         }
                     }
                 }
