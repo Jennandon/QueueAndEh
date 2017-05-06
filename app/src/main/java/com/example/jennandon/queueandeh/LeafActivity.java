@@ -22,7 +22,7 @@ public class LeafActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.testlayout3node);
+        setContentView(R.layout.decisionlayout);
         this.getResources().openRawResource(R.raw.decisiontreexml);
 
         Integer extra = getIntent().getIntExtra("decision", 2);

@@ -94,18 +94,18 @@ public class DecisionActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        Intent i;
+
                         if (DecisionManager.getInstance().getGlobalMap().get(currentDecision.getYesSubdecision()).isLeaf()) {
-                            Intent i = new Intent(DecisionActivity.this, LeafActivity.class);
-                            i.putExtra("decision", currentDecision.getYesSubdecision());
-                            startActivity(i);
+                            i = new Intent(DecisionActivity.this, LeafActivity.class);
                         }
 
                         else {
-                            Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
-                            i.putExtra("decision", currentDecision.getYesSubdecision());
-                            startActivity(i);
+                            i = new Intent(DecisionActivity.this, DecisionActivity.class);
                         }
 
+                        i.putExtra("decision", currentDecision.getYesSubdecision());
+                        startActivity(i);
                     }
                 }
         );
@@ -118,18 +118,18 @@ public class DecisionActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        Intent i;
 
                         if (DecisionManager.getInstance().getGlobalMap().get(currentDecision.getNoSubdecision()).isLeaf()) {
-                            Intent i = new Intent(DecisionActivity.this, LeafActivity.class);
-                            i.putExtra("decision", currentDecision.getNoSubdecision());
-                            startActivity(i);
+                            i = new Intent(DecisionActivity.this, LeafActivity.class);
                         }
 
                         else {
-                            Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
-                            i.putExtra("decision", currentDecision.getNoSubdecision());
-                            startActivity(i);
+                            i = new Intent(DecisionActivity.this, DecisionActivity.class);
                         }
+
+                        i.putExtra("decision", currentDecision.getNoSubdecision());
+                        startActivity(i);
                     }
                 }
         );
