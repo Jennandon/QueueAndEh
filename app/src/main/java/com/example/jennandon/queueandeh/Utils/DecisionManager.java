@@ -4,7 +4,10 @@ import android.content.res.Resources;
 
 import com.example.jennandon.queueandeh.Decision.Decision;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * DecisionManager singleton to contain static information of interest to our activities
@@ -43,6 +46,22 @@ public class DecisionManager {
 
     public void setDecisionMap(final Map<Integer, Decision> decisionMap){
         this.decisionMap = decisionMap;
+    }
+
+    public Integer getRandomLeafId() {
+
+        List<Integer> leafIds = new ArrayList<>();
+
+        // if decision is a leaf, add it to list for random selection
+        for (Decision decision : decisionMap.values()) {
+            if (decision.isLeaf()) {
+                leafIds.add(decision.getId());
+            }
+        }
+
+        // randomly select a leaf ID from the list
+        Random r = new Random();
+        return leafIds.get(r.nextInt(leafIds.size()));
     }
 
 }

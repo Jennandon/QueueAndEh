@@ -61,7 +61,7 @@
         android:text="SURPRISE ME!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/surprise_me"
         android:fontFamily="monospace"
         style="@android:style/Widget.DeviceDefault.Light.Button"
         android:layout_alignBaseline="@+id/NO"

@@ -27,8 +27,8 @@ public class DecisionActivity extends Activity {
         Integer extra = getIntent().getIntExtra("decision", 2);
         currentDecision = DecisionManager.getInstance().getDecisionMap().get(extra);
 
-        // TODO: refactor this
         setStartOverBtn();
+        setSurpriseMeButton();
 
         setDecisionFields();
 
@@ -144,6 +144,22 @@ public class DecisionActivity extends Activity {
         );
 
     }
+
+    // sets the button for surprise, brings user to random leaf
+    protected void setSurpriseMeButton() {
+        final Button surpriseMeBtn = (Button) findViewById(R.id.surprise_me);
+        surpriseMeBtn.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(DecisionActivity.this, LeafActivity.class);
+                        i.putExtra("decision", DecisionManager.getInstance().getRandomLeafId());
+                        startActivity(i);
+                   }
+                }
+        );
+    }
+
 
 
 }
