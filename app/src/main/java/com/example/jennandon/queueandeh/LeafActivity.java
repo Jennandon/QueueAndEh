@@ -26,7 +26,7 @@ public class LeafActivity extends Activity {
 
         setContentView(R.layout.leaflayout);
 
-        Integer extra = getIntent().getIntExtra("decision", 2);
+        Integer extra = getIntent().getIntExtra("decision", 1);
         currentDecision = DecisionManager.getInstance().getDecisionMap().get(extra);
 
         // TODO: refactor this
@@ -71,7 +71,7 @@ public class LeafActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (currentDecision.getId() != 2) {
+                        if (currentDecision.getId() != 1) {
                             Intent i = new Intent(LeafActivity.this, DecisionActivity.class);
                             i.putExtra("decision", currentDecision.getParentId());
                             startActivity(i);

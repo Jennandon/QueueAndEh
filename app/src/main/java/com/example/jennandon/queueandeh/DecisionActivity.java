@@ -24,7 +24,7 @@ public class DecisionActivity extends Activity {
         
         setContentView(R.layout.decisionlayout);
 
-        Integer extra = getIntent().getIntExtra("decision", 2);
+        Integer extra = getIntent().getIntExtra("decision", 1);
         currentDecision = DecisionManager.getInstance().getDecisionMap().get(extra);
 
         setStartOverBtn();
@@ -75,7 +75,7 @@ public class DecisionActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (currentDecision.getId() != 2) {
+                        if (currentDecision.getId() != 1) {
                             Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
                             i.putExtra("decision", currentDecision.getParentId());
                             startActivity(i);
