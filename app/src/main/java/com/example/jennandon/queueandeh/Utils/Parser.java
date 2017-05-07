@@ -22,7 +22,7 @@ public class Parser{
 
         public Map<Integer, Decision> loadData(Resources resources){
             try{
-                return parseDecisionsXML(resources.openRawResource(R.raw.decisiontreexml));
+                return parseDecisionsXML(resources.openRawResource(R.raw.updateddecisiontree));
             }
             catch(XmlPullParserException e){
                 //TODO: Add logging here
