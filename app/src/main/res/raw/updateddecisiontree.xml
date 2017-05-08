@@ -42,10 +42,10 @@
     </decision>
 
     <decision id="8"  parent="6">
-        <text>HIKE THE STAWAMUS CHIEF!</text>
+        <text>HIKE THE CHIEF!</text>
         <picture>beer</picture>
         <sound></sound>
-        <resources></resources>
+        <resources><a href="https://www.vancouvertrails.com/trails/stawamus-chief/">HIKE THE STAWAMUS CHIEF!</a>'</resources>
     </decision>
 
     <decision id="9" parent="6">
