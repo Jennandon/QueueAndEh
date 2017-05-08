@@ -33,7 +33,7 @@
 
 
     <decision id="6" parent="4">
-        <text>DO YOU WANT TO GET SCHWIFY--I MEAN SWEATY?</text>
+        <text>DO YOU WANT TO GET SCHWIFTY--I MEAN SWEATY?</text>
         <picture>bike</picture>
         <sound></sound>
         <resources></resources>
@@ -57,7 +57,7 @@
 
     <decision id="5" parent="4">
         <text>IS THE WEATHER HOT?</text>
-        <picture></picture>
+        <picture>sunemoji</picture>
         <sound></sound>
         <resources></resources>
         <yes_child_id>10</yes_child_id>
@@ -210,7 +210,7 @@
 
     <decision id="30" parent="29">
         <text>IS IT HOT OUT?</text>
-        <picture></picture>
+        <picture>sunemoji</picture>
         <sound></sound>
         <resources></resources>
         <yes_child_id>32</yes_child_id>
