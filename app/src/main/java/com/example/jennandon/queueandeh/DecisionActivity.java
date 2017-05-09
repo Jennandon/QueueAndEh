@@ -17,7 +17,7 @@ import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
 public class DecisionActivity extends Activity {
     private Decision currentDecision;
-    private Boolean surpriseMe = false;
+    //private Boolean surpriseMe = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,7 +148,7 @@ public class DecisionActivity extends Activity {
 
     // sets the button for surprise, brings user to random leaf
     protected void setSurpriseMeButton() {
-        surpriseMe = true;
+        //surpriseMe = true;
         final Button surpriseMeBtn = (Button) findViewById(R.id.surprise_me);
         surpriseMeBtn.setOnClickListener(
                 new Button.OnClickListener() {
@@ -162,9 +162,9 @@ public class DecisionActivity extends Activity {
                 }
         );
     }
-    public boolean isSurpriseMeBtn(){
-        return this.surpriseMe;
-    }
+    //public boolean isSurpriseMeBtn(){
+    //    return this.surpriseMe;
+    //}
 
 
 

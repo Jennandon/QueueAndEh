@@ -45,7 +45,7 @@
         <text>HIKE THE CHIEF!</text>
         <picture>beer</picture>
         <sound></sound>
-        <resources><a href="https://www.vancouvertrails.com/trails/stawamus-chief/">HIKE THE STAWAMUS CHIEF!</a>'</resources>
+        <resources></resources>
     </decision>
 
     <decision id="9" parent="6">
