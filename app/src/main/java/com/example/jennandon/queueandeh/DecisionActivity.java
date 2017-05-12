@@ -17,7 +17,6 @@ import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
 public class DecisionActivity extends Activity {
     private Decision currentDecision;
-    //private Boolean surpriseMe = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,7 +153,7 @@ public class DecisionActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(DecisionActivity.this, LeafActivity.class);
+                        Intent i = new Intent(DecisionActivity.this, SurpriseMeLeafActivity.class);
                         i.putExtra("decision", DecisionManager.getInstance().getRandomLeafId());
                         startActivity(i);
                         overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);

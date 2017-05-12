@@ -1,110 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/accent_material_dark">
+    android:background="@drawable/city1"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <Button
-        android:text="NOPE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/NO"
-        android:layout_alignBaseline="@+id/YES"
-        android:layout_alignBottom="@+id/YES"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="40dp"
-        android:layout_marginEnd="40dp"
-        android:fontFamily="monospace" />
-
-    <Button
-        android:text="YEAH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/YES"
-        android:layout_marginLeft="38dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginBottom="19dp"
-        android:layout_above="@+id/start_over"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="87dp"
+        android:layout_height="36dp"
+        android:autoText="false"
+        android:background="@color/background_floating_material_light"
         android:fontFamily="monospace"
-        style="@android:style/Widget.DeviceDefault.Light.Button" />
-
-    <Button
-        android:text="start again"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/start_over"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
-        android:fontFamily="monospace"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/NO"
-        android:layout_alignEnd="@+id/NO" />
-
-    <Button
-        android:text="go back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/back"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"
-        android:fontFamily="monospace"
-        android:layout_toLeftOf="@+id/start_over"
-        android:layout_toStartOf="@+id/start_over"
-        android:layout_marginRight="36dp"
-        android:layout_marginEnd="36dp"
-        android:visibility="visible"
-        android:layout_alignParentBottom="true" />
+        android:text="NOPE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/YES"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.926"
+        tools:layout_editor_absoluteY="447dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/city1"
-        android:id="@+id/imageView10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
+        android:id="@+id/imageView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/indecicitytitle"
-        android:id="@+id/imageView9"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
     <TextView
-        android:text="ARE YOU FEELING"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        android:textSize="24sp"
-        android:textColor="@color/abc_input_method_navigation_guard"
-        android:fontFamily="monospace"
-        android:layout_marginTop="35dp"
-        android:textAlignment="center"
-        android:layout_below="@+id/imageView9"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="INDECISIVE?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:textSize="23sp"
         android:fontFamily="monospace"
+        android:text="ARE YOU FEELING \n  INDECISIVE?"
+        android:textAlignment="center"
         android:textColor="@color/abc_input_method_navigation_guard"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" /><![CDATA[
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginTop="110dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/YES"
+        style="@android:style/Widget.DeviceDefault.Light.Button"
+        android:layout_width="87dp"
+        android:layout_height="36dp"
+        android:background="@color/background_floating_material_light"
+        android:fadeScrollbars="false"
+        android:fontFamily="monospace"
+        android:text="YEAH"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/NO"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928"
+        tools:layout_editor_absoluteY="441dp"
+        tools:layout_editor_absoluteX="70dp" /><![CDATA[
+
+
+
+
 
 
 
     -->
 
 
+
+
 ]]>
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/accent_material_dark">
@@ -11,9 +12,13 @@
         android:id="@+id/imageView4"
         android:scaleType="center"
         android:adjustViewBounds="true"
-        android:layout_below="@+id/imageView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:text="start again"
@@ -22,31 +27,35 @@
         android:id="@+id/start_over"
         style="@android:style/Widget.Material.Button.Borderless.Colored"
         android:fontFamily="monospace"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="1dp" />
 
     <TextView
-        android:text="THEN FIGURE IT OUT YOUR DAMN SELF!"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textSize="24sp"
-        android:textColor="@color/abc_input_method_navigation_guard"
         android:fontFamily="monospace"
-        android:layout_marginBottom="16dp"
-        android:layout_above="@+id/start_over"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp" />
+        android:text="FIGURE IT OUT YOUR \n OWN DAMN SELF THEN!"
+        android:textColor="@color/abc_input_method_navigation_guard"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/start_over"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decision_image" />
 
     <ImageView
         android:id="@+id/decision_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/link2"
-        android:layout_above="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp" />
+        android:background="@drawable/rollingeyes"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-   </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

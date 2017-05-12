@@ -40,6 +40,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LeafActivity" />
         </activity>
+        <activity
+            android:name=".SurpriseMeLeafActivity"
+            android:label="SurpriseMeLeaf"
+            android:parentActivityName=".DecisionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SurpriseMeLeafActivity" />
+        </activity>
     </application>
 
 </manifest>

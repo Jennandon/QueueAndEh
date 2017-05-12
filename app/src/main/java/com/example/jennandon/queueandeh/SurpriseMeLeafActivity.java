@@ -17,14 +17,14 @@ import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
 
 
-public class SurprisedLeafActivity extends Activity {
+public class SurpriseMeLeafActivity extends Activity {
     private Decision currentDecision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.surprisedleaflayout);
+        setContentView(R.layout.surprisemeleaflayout);
 
         Integer extra = getIntent().getIntExtra("decision", 1);
         currentDecision = DecisionManager.getInstance().getDecisionMap().get(extra);
@@ -32,7 +32,6 @@ public class SurprisedLeafActivity extends Activity {
         // TODO: refactor this
         setStartOverBtn();
         setDecisionFields();
-        //setGoBackBtn();
     }
 
     //sets decision fields for the current decision
@@ -56,7 +55,7 @@ public class SurprisedLeafActivity extends Activity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(SurprisedLeafActivity.this, StartActivity.class);
+                        Intent i = new Intent(SurpriseMeLeafActivity.this, StartActivity.class);
                         startActivity(i);
                         overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
                     }
@@ -64,25 +63,4 @@ public class SurprisedLeafActivity extends Activity {
         );
     }
 
-//    //sets the button for going back to the parent decision
-//    protected void setGoBackBtn() {
-//        final Button goBackBtn = (Button) findViewById(R.id.back);
-//        goBackBtn.setOnClickListener(
-//                new Button.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        if (currentDecision.getId() != 1) {
-//                            Intent i = new Intent(SurprisedLeafActivity.this, DecisionActivity.class);
-//                            i.putExtra("decision", currentDecision.getParentId());
-//                            startActivity(i);
-//                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-//                        } else {
-//                            Intent i = new Intent(SurprisedLeafActivity.this, StartActivity.class);
-//                            startActivity(i);
-//                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-//                        }
-//                    }
-//                }
-//        );
-//    }
 }
