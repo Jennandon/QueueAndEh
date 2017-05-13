@@ -15,9 +15,10 @@ public class Decision {
     private Integer parentId;
     private Integer yesSubdecision;
     private Integer noSubdecision;
-    private String soundPath;
+    private String infoURL;
     private String imageName;
-    private List<String> resources;
+
+    // private String soundName;
 
     public Decision(){
         this.text = null;
@@ -25,9 +26,8 @@ public class Decision {
         this.parentId = null;
         this.yesSubdecision = null;
         this.noSubdecision = null;
-        this.soundPath = null;
+        this.infoURL = null;
         this.imageName = null;
-        this.resources = null;
     }
 
     public Integer getId() {
@@ -54,12 +54,12 @@ public class Decision {
 
     public void setNoSubdecision(Integer noSubdecision) {this.noSubdecision = noSubdecision;}
 
-    public String getSoundPath() {
-        return soundPath;
+    public String getInfoURL() {
+        return infoURL;
     }
 
-    public void setSoundPath(String soundPath) {
-        this.soundPath = soundPath;
+    public void setInfoURL(String infoURL) {
+        this.infoURL = infoURL;
     }
 
     public String getImageName() {
@@ -68,14 +68,6 @@ public class Decision {
 
     public void setImageName(String imageName) {
         this.imageName = imageName;
-    }
-
-    public List<String> getResources() {
-        return resources;
-    }
-
-    public void setResources(List<String> resources) {
-        this.resources = resources;
     }
 
     public String getText() {

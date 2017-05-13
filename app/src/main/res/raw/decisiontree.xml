@@ -6,7 +6,6 @@
         <text>DO YOU HAVE THE WHOLE DAY?</text>
         <picture>sun</picture>
         <sound></sound>
-        <resources> </resources>
         <yes_child_id>2</yes_child_id>
         <no_child_id>21</no_child_id>
     </decision>
@@ -17,7 +16,6 @@
         <text>DO YOU ENJOY THE GREAT OUTDOORS?</text>
         <picture>outdoors</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>4</yes_child_id>
         <no_child_id>12</no_child_id>
     </decision>
@@ -26,7 +24,6 @@
         <text>DO YOU HAVE ACCESS TO A VEHICLE?</text>
         <picture>vehicle</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>6</yes_child_id>
         <no_child_id>5</no_child_id>
     </decision>
@@ -36,7 +33,6 @@
         <text>DO YOU WANT TO GET SCHWIFTY--I MEAN SWEATY?</text>
         <picture>sweat</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>8</yes_child_id>
         <no_child_id>9</no_child_id>
     </decision>
@@ -45,21 +41,20 @@
         <text>HIKE THE CHIEF!</text>
         <picture>thechief</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://www.env.gov.bc.ca/bcparks/explore/parkpgs/stawamus/</url>
     </decision>
 
     <decision id="9" parent="6">
-        <text>RENT PADDBLEBOARDS IN DEEP COVE!</text>
+        <text>RENT PADDLEBOARDS IN DEEP COVE!</text>
         <picture>boat</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://www.deepcovekayak.com/stand-up-paddleboard/overview/</url>
     </decision>
 
     <decision id="5" parent="4">
         <text>IS THE WEATHER HOT?</text>
         <picture>sun</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>10</yes_child_id>
         <no_child_id>11</no_child_id>
     </decision>
@@ -68,21 +63,20 @@
         <text>GO CHILL OUT AT WRECK BEACH!</text>
         <picture>beach</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://www.wreckbeach.org/</url>
     </decision>
 
     <decision id="11"  parent="6">
         <text>GO BIKING AROUND STANLEY PARK!</text>
         <picture>bike</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://vancouver.ca/parks-recreation-culture/seawall.aspx</url>
     </decision>
 
     <decision id="12" parent="2">
         <text>NEED A G-RATED ACTIVITY?</text>
         <picture>baby</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>14</yes_child_id>
         <no_child_id>13</no_child_id>
     </decision>
@@ -91,7 +85,6 @@
         <text>ARE YOU INTO ART?</text>
         <picture>art</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>16</yes_child_id>
         <no_child_id>15</no_child_id>
     </decision>
@@ -100,21 +93,20 @@
         <text>CHECK OUT THE EXHIBITS AT VANCOUVER ART GALLERY!</text>
         <picture>gallery</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://www.vanartgallery.bc.ca/</url>
     </decision>
 
     <decision id="15"  parent="14">
         <text>CHECK OUT THE EXHIBITS AT SCIENCE WORLD!</text>
         <picture>science</picture>
         <sound></sound>
-        <resources></resources>
+        <url>https://www.scienceworld.ca/</url>
     </decision>
 
     <decision id="13" parent="12">
         <text>DO YOU LIKE YOUR LIQUOR STRONG?</text>
         <picture>stiff</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>18</yes_child_id>
         <no_child_id>19</no_child_id>
     </decision>
@@ -123,13 +115,13 @@
         <text>GO ON A LOCAL DISTILLERY TOUR!</text>
         <picture>distillery</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://www.vancitybuzz.com/2014/01/vancouver-distillery-guide/</url>
     </decision>
     <decision id="19" parent="13">
         <text>GO ON A LOCAL BREWERY TOUR!</text>
         <picture>beers</picture>
         <sound></sound>
-        <resources></resources>
+        <url>https://vancouverbrewerytours.com/</url>
     </decision>
 
     <!--NO to whole day decisions-->
@@ -138,7 +130,6 @@
         <text>DO YOU NEED SOME FRESH AIR?</text>
         <picture>freshair</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>22</yes_child_id>
         <no_child_id>29</no_child_id>
     </decision>
@@ -147,7 +138,6 @@
         <text>ARE YOU FEELING ATHLETIC?</text>
         <picture>athletic</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>24</yes_child_id>
         <no_child_id>23</no_child_id>
     </decision>
@@ -157,7 +147,6 @@
         <text>DO YOU HAVE ACCESS TO A VEHICLE?</text>
         <picture>vehicle</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>26</yes_child_id>
         <no_child_id>27</no_child_id>
     </decision>
@@ -166,7 +155,6 @@
         <text>DO YOU HAVE ACCESS TO A VEHICLE?</text>
         <picture>vehicle</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>28</yes_child_id>
         <no_child_id>25</no_child_id>
     </decision>
@@ -175,35 +163,33 @@
         <text>GET ON YOUR GROUSE GRIND!</text>
         <picture>grousegrind</picture>
         <sound></sound>
-        <resources></resources>
     </decision>
 
     <decision id="27" parent="24">
         <text>CHECK OUT SOME OUTDOOR YOGA!</text>
         <picture>yoga</picture>
         <sound></sound>
-        <resources></resources>
+        <url>https://www.grousemountain.com/grousegrind</url>
     </decision>
 
     <decision id="28"  parent="23">
         <text>EXPLORE LYNN CANYON!</text>
         <picture>park</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://lynncanyon.ca/</url>
     </decision>
 
     <decision id="25" parent="23">
         <text>GO CHILL IN DUDE CHILLING OR MOUNT PLEASANT PARK!</text>
         <picture>chill</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://covapp.vancouver.ca/parkfinder/parkdetail.aspx?inparkid=136</url>
     </decision>
 
     <decision id="29" parent="21">
         <text>ARE YOU HUNGRY?</text>
         <picture>hungry</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>30</yes_child_id>
         <no_child_id>33</no_child_id>
     </decision>
@@ -212,7 +198,6 @@
         <text>IS IT HOT OUT?</text>
         <picture>hot</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>32</yes_child_id>
         <no_child_id>31</no_child_id>
     </decision>
@@ -221,21 +206,20 @@
         <text>GO TO EARNEST ICE CREAM SHOP!</text>
         <picture>icecream</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://earnesticecream.com/</url>
     </decision>
 
     <decision id="31" parent="30">
         <text>GO TO MARUTAMA FOR RAMEN!</text>
         <picture>ramen</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://marutama.ca/</url>
     </decision>
 
     <decision id="33" parent="29">
         <text>ARE YOU FEELING SOCIAL?</text>
         <picture>social</picture>
         <sound></sound>
-        <resources></resources>
         <yes_child_id>34</yes_child_id>
         <no_child_id>35</no_child_id>
     </decision>
@@ -243,13 +227,13 @@
         <text>GRAB A BEER AT BRASSNECK!</text>
         <picture>beer</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://brassneck.ca/</url>
     </decision>
     <decision id="35" parent="33">
         <text>PEEP A MOVIE AT THE RIO THEATRE!</text>
         <picture>movie</picture>
         <sound></sound>
-        <resources></resources>
+        <url>http://riotheatre.ca/</url>
     </decision>
 
 </decisions>

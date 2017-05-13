@@ -2,6 +2,7 @@ package com.example.jennandon.queueandeh;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class LeafActivity extends Activity {
 
         // TODO: refactor this
         setStartOverBtn();
+        setMoreInfoButton();
         setDecisionFields();
         setGoBackBtn();
     }
@@ -47,6 +49,21 @@ public class LeafActivity extends Activity {
         String variableValue = currentDecision.getImageName();
         decisionImageView.setImageResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
     }
+
+    // sets the button for opening the leaf's info link in browser
+    protected void setMoreInfoButton() {
+        final Button moreInfoBtn = (Button) findViewById(R.id.info);
+        moreInfoBtn.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(currentDecision.getInfoURL()));
+                        startActivity(i);
+                    }
+                }
+        );
+    }
+
 
 
     // sets the button for going back to the start

@@ -96,12 +96,9 @@ public class Parser{
                     decision.setImageName(readTextField(parser));
                     System.out.println(decision.getImageName());
 
-                } else if (name.equals("sound")) {
-                    decision.setSoundPath(readTextField(parser));
-                    System.out.println(decision.getSoundPath());
-
-                } else if (name.equals("resources")) {
-                    readTextField(parser);
+                } else if (name.equals("url")) {
+                    decision.setInfoURL(readTextField(parser));
+                    System.out.println(decision.getInfoURL());
 
                 }else if (name.equals("yes_child_id")) {
                     decision.setYesSubdecision(Integer.parseInt(readTextField(parser)));
