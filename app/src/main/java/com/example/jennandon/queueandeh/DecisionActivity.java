@@ -15,7 +15,7 @@ import com.example.jennandon.queueandeh.Utils.DecisionManager;
  * Created by shanben7 on 2017-02-21.
  */
 
-public class DecisionActivity extends Activity {
+public class DecisionActivity extends AbstractDecisionActivity {
     private Decision currentDecision;
 
     @Override
@@ -34,7 +34,7 @@ public class DecisionActivity extends Activity {
 
         setYesButton();
         setNoButton();
-        setGoBackBtn();
+        setGoBackBtn(currentDecision);
     }
 
     //sets decision fields for the current decision
@@ -48,48 +48,6 @@ public class DecisionActivity extends Activity {
         ImageView decisionImageView = (ImageView) findViewById(R.id.decision_image);
         String variableValue = currentDecision.getImageName();
         decisionImageView.setImageResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
-    }
-
-
-
-    // sets the button for going back to the start
-    protected void setStartOverBtn() {
-        final Button startOverBtn = (Button) findViewById(R.id.start_over);
-        startOverBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(DecisionActivity.this, StartActivity.class);
-                        startActivity(i);
-
-                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                    }
-                }
-        );
-    }
-
-    //sets the button for going back to the parent decision
-    protected void setGoBackBtn(){
-        final Button goBackBtn = (Button) findViewById(R.id.back);
-        goBackBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (currentDecision.getId() != 1) {
-                            Intent i = new Intent(DecisionActivity.this, DecisionActivity.class);
-                            i.putExtra("decision", currentDecision.getParentId());
-                            startActivity(i);
-
-                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                        } else {
-                            Intent i = new Intent(DecisionActivity.this, StartActivity.class);
-                            startActivity(i);
-
-                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                        }
-                    }
-                }
-        );
     }
 
     // when yes button is pressed, go to this decision's "yes" subDecision
@@ -144,27 +102,5 @@ public class DecisionActivity extends Activity {
         );
 
     }
-
-    // sets the button for surprise, brings user to random leaf
-    protected void setSurpriseMeButton() {
-        //surpriseMe = true;
-        final Button surpriseMeBtn = (Button) findViewById(R.id.surprise_me);
-        surpriseMeBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(DecisionActivity.this, SurpriseMeLeafActivity.class);
-                        i.putExtra("decision", DecisionManager.getInstance().getRandomLeafId());
-                        startActivity(i);
-                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                   }
-                }
-        );
-    }
-    //public boolean isSurpriseMeBtn(){
-    //    return this.surpriseMe;
-    //}
-
-
 
 }

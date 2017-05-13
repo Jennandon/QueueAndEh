@@ -18,7 +18,7 @@ import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
 
 
-public class LeafActivity extends Activity {
+public class LeafActivity extends AbstractDecisionActivity {
     private Decision currentDecision;
 
     @Override
@@ -30,76 +30,11 @@ public class LeafActivity extends Activity {
         Integer extra = getIntent().getIntExtra("decision", 1);
         currentDecision = DecisionManager.getInstance().getDecisionMap().get(extra);
 
-        // TODO: refactor this
         setStartOverBtn();
-        setMoreInfoButton();
-        setDecisionFields();
-        setGoBackBtn();
+        setMoreInfoButton(currentDecision);
+        setDecisionFields(currentDecision);
+        setGoBackBtn(currentDecision);
     }
 
-    //sets decision fields for the current decision
-    protected void setDecisionFields() {
-
-        // display the current decision's text
-        TextView decisionTextView = (TextView) findViewById(R.id.decisionText);
-        decisionTextView.setText(currentDecision.getText());
-
-        // display the current decision's image
-        ImageView decisionImageView = (ImageView) findViewById(R.id.decision_image);
-        String variableValue = currentDecision.getImageName();
-        decisionImageView.setImageResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
-    }
-
-    // sets the button for opening the leaf's info link in browser
-    protected void setMoreInfoButton() {
-        final Button moreInfoBtn = (Button) findViewById(R.id.info);
-        moreInfoBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(currentDecision.getInfoURL()));
-                        startActivity(i);
-                    }
-                }
-        );
-    }
-
-
-
-    // sets the button for going back to the start
-    protected void setStartOverBtn() {
-        final Button startOverBtn = (Button) findViewById(R.id.start_over);
-        startOverBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(LeafActivity.this, StartActivity.class);
-                        startActivity(i);
-                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                    }
-                }
-        );
-    }
-
-    //sets the button for going back to the parent decision
-    protected void setGoBackBtn() {
-        final Button goBackBtn = (Button) findViewById(R.id.back);
-        goBackBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (currentDecision.getId() != 1) {
-                            Intent i = new Intent(LeafActivity.this, DecisionActivity.class);
-                            i.putExtra("decision", currentDecision.getParentId());
-                            startActivity(i);
-                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                        } else {
-                            Intent i = new Intent(LeafActivity.this, StartActivity.class);
-                            startActivity(i);
-                            overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                        }
-                    }
-                }
-        );
-    }
 }
+

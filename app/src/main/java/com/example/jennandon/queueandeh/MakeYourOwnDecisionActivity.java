@@ -11,32 +11,14 @@ import android.widget.Button;
  **/
 
 
-    public class MakeYourOwnDecisionActivity extends Activity {
+    public class MakeYourOwnDecisionActivity extends AbstractDecisionActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.yourowndecisionlayout);
 
-            // TODO: refactor so that the code isn't duplicated in decisionActivity
             setStartOverBtn();
         }
-
-    // sets the button for going back to the start
-    protected void setStartOverBtn() {
-        final Button startOverBtn = (Button) findViewById(R.id.start_over);
-        startOverBtn.setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        //yesBtn.setBackgroundColor(Color.RED);
-                        Intent i = new Intent(MakeYourOwnDecisionActivity.this, StartActivity.class);
-                        //i.putExtra(getString(R.string.stop_name_key), stop.getNumber());
-                        startActivity(i);
-                        overridePendingTransition(R.anim.abc_fade_in, android.R.anim.fade_out);
-                    }
-                }
-        );
-    }
     }
 
