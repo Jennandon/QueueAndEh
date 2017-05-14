@@ -15,6 +15,7 @@ public class Decision {
     private Integer parentId;
     private Integer yesSubdecision;
     private Integer noSubdecision;
+    private String location;
     private String infoURL;
     private String imageName;
 
@@ -28,6 +29,7 @@ public class Decision {
         this.noSubdecision = null;
         this.infoURL = null;
         this.imageName = null;
+        this.location = null;
     }
 
     public Integer getId() {
@@ -76,6 +78,14 @@ public class Decision {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     /*

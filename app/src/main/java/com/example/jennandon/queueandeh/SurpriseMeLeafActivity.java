@@ -32,6 +32,24 @@ public class SurpriseMeLeafActivity extends AbstractDecisionActivity {
         setStartOverBtn();
         setDecisionFields(currentDecision);
         setMoreInfoButton(currentDecision);
+        setMapsButton();
+    }
+
+    public void setMapsButton() {
+        final Button mapsButton = (Button) findViewById(R.id.maps);
+        mapsButton.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        String uri = "http://maps.google.co.in/maps?q=" + currentDecision.getLocation();
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                        mapIntent.setPackage("com.google.android.apps.maps");
+                        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(mapIntent);
+                        }
+                    }
+                });
     }
 
 

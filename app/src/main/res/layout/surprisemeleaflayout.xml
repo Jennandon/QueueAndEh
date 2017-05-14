@@ -7,13 +7,25 @@
     android:background="@color/accent_material_dark">
 
     <Button
+        android:id="@+id/maps"
+        style="@android:style/Widget.DeviceDefault.Light.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="open in maps"
+        app:layout_constraintBottom_toTopOf="@+id/start_over"
+        app:layout_constraintTop_toBottomOf="@+id/info"
+        app:layout_constraintRight_toLeftOf="@+id/info"
+        app:layout_constraintLeft_toRightOf="@+id/info" />
+
+    <Button
         android:id="@+id/info"
         style="@android:style/Widget.DeviceDefault.Light.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:text="see info online"
-        app:layout_constraintBottom_toTopOf="@+id/start_over"
+        app:layout_constraintBottom_toTopOf="@+id/maps"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/decisionText" />

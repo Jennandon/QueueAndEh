@@ -42,6 +42,7 @@
         <picture>thechief</picture>
         <sound></sound>
         <url>http://www.env.gov.bc.ca/bcparks/explore/parkpgs/stawamus/</url>
+        <location>Stawamus Chief, Squamish, BC</location>
     </decision>
 
     <decision id="9" parent="6">
@@ -49,6 +50,7 @@
         <picture>boat</picture>
         <sound></sound>
         <url>http://www.deepcovekayak.com/stand-up-paddleboard/overview/</url>
+        <location>Deep Cove Kayak Centre, 2156 Banbury Rd, North Vancouver, BC V7G 2T1</location>
     </decision>
 
     <decision id="5" parent="4">
@@ -64,6 +66,7 @@
         <picture>beach</picture>
         <sound></sound>
         <url>http://www.wreckbeach.org/</url>
+        <location>Wreck Beach, Pacific Spirit Regional Park, Vancouver, BC V6T 1A7</location>
     </decision>
 
     <decision id="11"  parent="6">
@@ -71,6 +74,7 @@
         <picture>bike</picture>
         <sound></sound>
         <url>http://vancouver.ca/parks-recreation-culture/seawall.aspx</url>
+        <location>Stanley Park Cycle, 766 Denman St, Vancouver, BC V6G 2L5</location>
     </decision>
 
     <decision id="12" parent="2">
@@ -94,6 +98,7 @@
         <picture>gallery</picture>
         <sound></sound>
         <url>http://www.vanartgallery.bc.ca/</url>
+        <location>Vancouver Art Gallery, 750 Hornby St, Vancouver, BC V6Z 2H7</location>
     </decision>
 
     <decision id="15"  parent="14">
@@ -101,6 +106,7 @@
         <picture>science</picture>
         <sound></sound>
         <url>https://www.scienceworld.ca/</url>
+        <location>Science World at TELUS World of Science, 1455 Quebec St, Vancouver, BC V6A 3Z7</location>
     </decision>
 
     <decision id="13" parent="12">
@@ -116,12 +122,14 @@
         <picture>distillery</picture>
         <sound></sound>
         <url>http://www.vancitybuzz.com/2014/01/vancouver-distillery-guide/</url>
+        <location>Long Table Distillery, 1451 Hornby St, Vancouver, BC V6Z 1W8</location>
     </decision>
     <decision id="19" parent="13">
         <text>GO ON A LOCAL BREWERY TOUR!</text>
         <picture>beers</picture>
         <sound></sound>
         <url>https://vancouverbrewerytours.com/</url>
+        <location>Vancouver Brewery Tours Inc., 601 W Cordova St, Vancouver, BC V6B</location>
     </decision>
 
     <!--NO to whole day decisions-->
@@ -162,14 +170,18 @@
     <decision id="26" parent="24">
         <text>GET ON YOUR GROUSE GRIND!</text>
         <picture>grousegrind</picture>
+        <url>https://www.grousemountain.com/grousegrind</url>
+        <location>Grouse Mountain, 6400 Nancy Greene Way, North Vancouver, BC V7R 4K9</location>
         <sound></sound>
     </decision>
 
     <decision id="27" parent="24">
         <text>CHECK OUT SOME OUTDOOR YOGA!</text>
         <picture>yoga</picture>
+        <url>http://boredinvancouver.com/free-outdoor-yoga-kitsilano-vancouver-2016/</url>
+        <location>Kitsilano Beach, Vancouver, BC</location>
         <sound></sound>
-        <url>https://www.grousemountain.com/grousegrind</url>
+
     </decision>
 
     <decision id="28"  parent="23">
@@ -177,6 +189,7 @@
         <picture>park</picture>
         <sound></sound>
         <url>http://lynncanyon.ca/</url>
+        <location>Lynn Canyon, North Vancouver, BC</location>
     </decision>
 
     <decision id="25" parent="23">
@@ -184,6 +197,7 @@
         <picture>chill</picture>
         <sound></sound>
         <url>http://covapp.vancouver.ca/parkfinder/parkdetail.aspx?inparkid=136</url>
+        <location>Dude Chilling Park, 2390 Brunswick St, Vancouver, BC V5T 3L8</location>
     </decision>
 
     <decision id="29" parent="21">
@@ -207,6 +221,7 @@
         <picture>icecream</picture>
         <sound></sound>
         <url>http://earnesticecream.com/</url>
+        <location>Earnest Ice Cream, 1829 Quebec St, Vancouver, BC V5T 4S6</location>
     </decision>
 
     <decision id="31" parent="30">
@@ -214,6 +229,7 @@
         <picture>ramen</picture>
         <sound></sound>
         <url>http://marutama.ca/</url>
+        <location>Marutama Ra-men Canada, 780 Bidwell St, Vancouver, BC V6G 2J6</location>
     </decision>
 
     <decision id="33" parent="29">
@@ -228,12 +244,14 @@
         <picture>beer</picture>
         <sound></sound>
         <url>http://brassneck.ca/</url>
+        <location>Brassneck Brewery, 2148 Main St, Vancouver, BC V5T 3C5</location>
     </decision>
     <decision id="35" parent="33">
         <text>PEEP A MOVIE AT THE RIO THEATRE!</text>
         <picture>movie</picture>
         <sound></sound>
         <url>http://riotheatre.ca/</url>
+        <location>Rio on Broadway, 1660 E Broadway, Vancouver, BC V5N 1W1</location>
     </decision>
 
 </decisions>

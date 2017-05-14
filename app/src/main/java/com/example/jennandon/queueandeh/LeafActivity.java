@@ -12,11 +12,11 @@ import android.widget.TextView;
 import com.example.jennandon.queueandeh.Decision.Decision;
 import com.example.jennandon.queueandeh.Utils.DecisionManager;
 
+import java.util.Locale;
+
 /**
  * Created by shanben7 on 2017-05-05.
  **/
-
-
 
 public class LeafActivity extends AbstractDecisionActivity {
     private Decision currentDecision;
@@ -34,7 +34,26 @@ public class LeafActivity extends AbstractDecisionActivity {
         setMoreInfoButton(currentDecision);
         setDecisionFields(currentDecision);
         setGoBackBtn(currentDecision);
+
+        setMapsButton();
     }
+
+    public void setMapsButton() {
+            final Button mapsButton = (Button) findViewById(R.id.maps);
+            mapsButton.setOnClickListener(
+                    new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            String uri = "http://maps.google.co.in/maps?q=" + currentDecision.getLocation();
+                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                            mapIntent.setPackage("com.google.android.apps.maps");
+                            if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                                startActivity(mapIntent);
+                            }
+                        }
+                    });
+        }
 
 }
 

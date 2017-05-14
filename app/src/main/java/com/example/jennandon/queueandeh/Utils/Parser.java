@@ -107,6 +107,11 @@ public class Parser{
                 else if (name.equals("no_child_id")) {
                     decision.setNoSubdecision(Integer.parseInt(readTextField(parser)));
                 }
+
+                else if (name.equals("location")) {
+                    decision.setLocation(readTextField(parser));
+                    System.out.println(decision.getLocation());
+                }
                 else{
                     skip(parser);
                 }
